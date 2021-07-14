@@ -6,16 +6,28 @@ animals = ["kangaroo", "chimpanzee", "tasmanian devil", "elephant", "giraffe", "
 sea_creatures = ["jellyfish", "sea monkey", "monkfish", "seahorse", "dolphin", "octopus"]
 fruits = ["papaya", "dragon fruit", "kiwi fruit", "water melon", "lychee", "pineapple"]
 
+# stages for wrong answer   
+stages = ['',
+              '___________________',
+              '|         |        ',
+              '|         |        ',
+              '|         0        ',
+              '|        /|＼      ',
+              '|        / ＼      ',
+              '|                  ']
 
 def greeting():
     """
-    prompt user name input and display greetings
+    Prompt user to input name and display greetings
     """
     user_name = input("Enter your name:")
-    print(f"Welcome to hangman game, {user_name}")
+    print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
 
 def category_select():
-    print("~~~~~~  Please choose from one of following: ~~~~~~")
+    """
+    Prompt user to select a category for the game and vaidate the input
+    """
+    print("~~~~~~  Please choose from one of following category: ~~~~~~")
     print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits ~~~~~~")
     category_num = input("Enter 1,2 or 3 >>>>> ")
     if int(category_num) >= 0 and int(category_num) <=3:
@@ -26,10 +38,22 @@ def category_select():
 
     # print(f"You chose {category_num}")
 
+def display_question():
+    """
+    random word selection from the list and display _ for each letter
+    """
+    word = animals[random.randint(0,5)]
+    print(word)
+    word_len = len(word)
+    print(word_len)
+    qusestion = "_ " * len(word)
+    print(qusestion)
+ 
+
 def main():
     greeting() # greeting function
-    category_select() # choose category function
-    # display question function
+    category_select() # choose category function NEED TO FIX VALIDATION
+    display_question()  # display question function
         #request user input
     # checking input function(While game_on = True)
         # Check data type -convert to lower case > (try: except errortype:)
