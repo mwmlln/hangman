@@ -1,4 +1,5 @@
-# python code goes here
+import random
+
 # list for question word
 
 animals = ["kangaroo", "chimpanzee", "tasmanian devil", "elephant", "giraffe", "wombat",]
@@ -11,13 +12,23 @@ def greeting():
     prompt user name input and display greetings
     """
     user_name = input("Enter your name:")
-    
     print(f"Welcome to hangman game, {user_name}")
 
+def category_select():
+    print("~~~~~~  Please choose from one of following: ~~~~~~")
+    print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits ~~~~~~")
+    category_num = input("Enter 1,2 or 3 >>>>> ")
+    if int(category_num) >= 0 and int(category_num) <=3:
+        try:
+            print(f"You chose {category_num}")
+        except ValueError:     #NOR WORKING!!============= NEED TO FIX
+            print('Please enter 1, 2 or 3')
+
+    # print(f"You chose {category_num}")
 
 def main():
     greeting() # greeting function
-    # choose category function
+    category_select() # choose category function
     # display question function
         #request user input
     # checking input function(While game_on = True)
