@@ -4,7 +4,7 @@
 
 This site is created as a Milestone project for Code Institute's Software Development course.
 
-Here is a link to the live project: [](https://)
+Here is a link to the live project: [Hangman](https://https://pp3-hangman.herokuapp.com/)
 
 
 ## The purpose for this site 
@@ -108,7 +108,26 @@ Testing was carried out by creating each function at a time to minimise the smal
 PEP8
 
 ##  Deployment 
---- 
+### Here is the procedre taken to deploy the project on Heroku
+
+Prior to deply, two steps below are taken to prepare the project being deployed.
+1. Ensure all input method texts ends with \n for the progam to display properly on Heroku site
+2. All requirements are mentioned in requirements.txt file. This was done by typing following command in GitHub workspace terminal.
+  pip3 freeze > requirements.txt
+3. Sign up and log in to Heroku[heroku.com]
+4. Click on Create new app button. 
+5. In the next page displayed, enter the project name, pp3-hangman and select Europe as region, then click Create app button.
+6. Open settings page by pressing settings tab. Following has to be done in exact order.
+   In the Buildpack section of the setting page, press Add Buildpack button and choose python then, click save changes.
+   Select Add Buildpack button again and choose nodejs then save changes
+7. Navigate to deploy page by clicking the tab
+   Choose GitHub then click Connect to GitHub button.
+   In the popup window, click authorize and then input passowrd for GitHub
+   Once my Git Hub repositries are connected, type in the name in the search for the project, hangman.
+   When the repository is found, clikc connect button for the repository.
+   GitHub button indicates connected when connection was successful.
+8. As I wanted to have control when to deploy the version, I have chosen manual deployment by pressing Depoly branch button instead of Enable Automatic Deploys. 
+9. once the deployment completed View button will appear. This View button will open the terminal game in the new window.
 
 ##  Credits 
 --- 
