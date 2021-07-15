@@ -7,15 +7,16 @@ sea_creatures = ["jellyfish", "sea monkey", "monkfish", "seahorse", "dolphin", "
 fruits = ["papaya", "dragon fruit", "kiwi fruit", "water melon", "lychee", "pineapple"]
 
 # stages for wrong answer   
-stages = ['',
-              '___________________',
+stages = [    '___________________',
               '|         |        ',
               '|         |        ',
               '|         0        ',
               '|        /|＼      ',
               '|        / ＼      ',
-              '|                  ']
+              '| GAME        OVER!' ]
+
 stage_num = len(stages)   # getting the stage number so that it can be used as limit for incorrect attempt
+
 
 
 def greeting():
@@ -52,15 +53,14 @@ def hangman():
     """
     display questions and checks the answer and count attempts
     """
+    incorrect = 0
+    question = []
+    correct_guess =[]
     word = select_question()
     answers = [i for i in word]
     print(f"Answer is set as {answers}")
-    # word_len = len(word)
-
-    incorrect = 0
-    while incorrect < stage_num:
-        question = []
-        correct_guess =[]
+    # word_len = len(word)   
+    while incorrect < stage_num:              
         print("Can you guess the word? Enter one letter to see if you are right!")
         for i  in word:
             if i != " ":
@@ -79,6 +79,8 @@ def hangman():
         else:
             print(f"Letter {guessed.lower()} is not in the word!")
             incorrect += 1
+            print("\n".join(stages[:incorrect])) 
+            print("\n")
 
 def main():
     # greeting() # greeting function
