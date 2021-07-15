@@ -1,4 +1,4 @@
-import random
+import random, time
 
 # list for question word
 
@@ -35,25 +35,29 @@ def category_select():
             print(f"You chose {category_num}")
         except ValueError:     #NOR WORKING!!============= NEED TO FIX
             print('Please enter 1, 2 or 3')
+    time.sleep(1)
 
-    # print(f"You chose {category_num}")
-
-def display_question():
+def select_question():
     """
     random word selection from the list and display _ for each letter
     """
     word = animals[random.randint(0,5)]
+    return(word)
+
+def hangman():
+    word = select_question()
     print(word)
     word_len = len(word)
     print(word_len)
     qusestion = "_ " * len(word)
     print(qusestion)
+
  
 
 def main():
     greeting() # greeting function
     category_select() # choose category function NEED TO FIX VALIDATION
-    display_question()  # display question function
+    hangman()  # display question function
         #request user input
     # checking input function(While game_on = True)
         # Check data type -convert to lower case > (try: except errortype:)
