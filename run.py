@@ -15,6 +15,8 @@ stages = ['',
               '|        /|＼      ',
               '|        / ＼      ',
               '|                  ']
+stage_num = len(stages)   # getting the stage number so that it can be used as limit for incorrect attempt
+
 
 def greeting():
     """
@@ -33,6 +35,7 @@ def category_select():
     if int(category_num) >= 0 and int(category_num) <=3:
         try:
             print(f"You chose {category_num}")
+            print(f"Guess all the letters included in the words in the category {category_num}")
         except ValueError:     #NOR WORKING!!============= NEED TO FIX
             print('Please enter 1, 2 or 3')
     time.sleep(1)
@@ -46,20 +49,23 @@ def select_question():
 
 def hangman():
     word = select_question()
-    print(word)
+    answers = [i for i in word]
+    print(f"Answer is set as {answers}")
     word_len = len(word)
-    print(word_len)
     qusestion = "_ " * len(word)
     print(qusestion)
-
- 
-
+    incorrect = 0
+    while incorrect < stage_num:
+        print("Can you guess the word? Enter one letter to see if you are right!")
+        guessed = input("Enter one letter please! \n")
+        print(guessed)
+        incorrect +=1
+  
 def main():
     greeting() # greeting function
     category_select() # choose category function NEED TO FIX VALIDATION
-    hangman()  # display question function
-        #request user input
-    # checking input function(While game_on = True)
+    hangman() 
+        # checking input function(While game_on = True)
         # Check data type -convert to lower case > (try: except errortype:)
         # check if answer is correct
             # if correct
