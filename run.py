@@ -22,7 +22,7 @@ def greeting():
     """
     Prompt user to input name and display greetings
     """
-    user_name = input("Enter your name:")
+    user_name = input("Enter your name: \n")
     print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
     time.sleep(1)
 
@@ -32,7 +32,7 @@ def category_select():
     """
     print("~~~~~~  Please choose from one of following category: ~~~~~~")
     print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits ~~~~~~")
-    category_num = input("Enter 1,2 or 3 >>>>> ")
+    category_num = input("Enter 1,2 or 3 >>>>> \n")
     if int(category_num) >= 0 and int(category_num) <=3:
         try:
             print(f"You chose {category_num}")
