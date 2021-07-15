@@ -49,30 +49,42 @@ def select_question():
     return(word)
 
 def hangman():
+    """
+    display questions and checks the answer and count attempts
+    """
     word = select_question()
     answers = [i for i in word]
     print(f"Answer is set as {answers}")
-    word_len = len(word)
-    qusestion = "_ " * len(word)
-    print(qusestion)
+    # word_len = len(word)
+
     incorrect = 0
     while incorrect < stage_num:
+        question = []
+        correct_guess =[]
         print("Can you guess the word? Enter one letter to see if you are right!")
-        guessed = input("Enter one letter please! \n")
-        # print(guessed.lower())
-        if guessed.lower() in answers:
+        for i  in word:
+            if i != " ":
+                print("_  ", end="")
+            elif i in correct_guess:
+                print(i, end="")
+            else:
+                print(i, end="")
+        print('\n')
+        guessed = input("Enter one letter please! \n").lower()
+        print(f"You entered {guessed}")
+        if guessed in answers:
             print(f"{guessed} is the right answer")
+            correct_guess.append(guessed)
+            print(correct_guess)
         else:
             print(f"Letter {guessed.lower()} is not in the word!")
-            incorrect +=1
-  
+            incorrect += 1
+
 def main():
-    greeting() # greeting function
-    category_select() # choose category function NEED TO FIX VALIDATION
+    # greeting() # greeting function
+    # category_select() # choose category function NEED TO FIX VALIDATION
     hangman() 
-        # checking input function(While game_on = True)
         # Check data type -convert to lower case > (try: except errortype:)
-        # check if answer is correct
             # if correct
                 # replace __ to the letter 
                 # check if the word is completed
