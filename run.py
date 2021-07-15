@@ -24,6 +24,7 @@ def greeting():
     """
     user_name = input("Enter your name:")
     print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
+    time.sleep(1)
 
 def category_select():
     """
@@ -58,8 +59,12 @@ def hangman():
     while incorrect < stage_num:
         print("Can you guess the word? Enter one letter to see if you are right!")
         guessed = input("Enter one letter please! \n")
-        print(guessed)
-        incorrect +=1
+        # print(guessed.lower())
+        if guessed.lower() in answers:
+            print(f"{guessed} is the right answer")
+        else:
+            print(f"Letter {guessed.lower()} is not in the word!")
+            incorrect +=1
   
 def main():
     greeting() # greeting function
