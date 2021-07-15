@@ -95,7 +95,12 @@ Initial design flowchart
  
  
 ##  Testing 
---- 
+Testing was carried out by creating each function at a time to minimise the small errors impacting the whole project.
+
+Here are some of the challenges I encountered and steps taken to fix.
+
+1. Validating user input for category choises.
+  try/except method is used to validate the user input for category choise however, it was throwing system error instead of preset printing messagge 
 
 
 ###  Validating code 
