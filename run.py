@@ -55,7 +55,7 @@ def hangman():
     """
     incorrect = 0
     question = []
-    correct_guess =[]
+    correct_guess = []
     word = select_question()
     answers = [i for i in word]
     print(f"Answer is set as {answers}")
@@ -76,11 +76,13 @@ def hangman():
             print(f"{guessed} is the right answer")
             correct_guess.append(guessed)
             print(correct_guess)
+            time.sleep(1)
         else:
             print(f"Letter {guessed.lower()} is not in the word!")
             incorrect += 1
             print("\n".join(stages[:incorrect])) 
             print("\n")
+            time.sleep(1)
 
 def main():
     # greeting() # greeting function
