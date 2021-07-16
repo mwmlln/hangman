@@ -63,12 +63,13 @@ def hangman():
     while incorrect < stage_num:              
         print("Can you guess the word? Enter one letter to see if you are right!")
         for i  in word:
-            if i != " ":
-                print("_  ", end="")
+            if i ==  " ":
+                print(i, end=" ")
             elif i in correct_guess:
-                print(i, end="")
+                print(i, end=" ")
             else:
-                print(i, end="")
+                print("_  ", end=" ")
+                
         print('\n')
         guessed = input("Enter one letter please! \n").lower()
         print(f"You entered {guessed}")
