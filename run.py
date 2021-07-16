@@ -60,7 +60,8 @@ def hangman():
     word = select_question()    # Random word chosen by the function
     answers = [i for i in word]    #Creating list of letters from the word
     print(f"Answer is set as {answers}")    # For testing purpose, NEED TO BE DELETED ON COMPLETION
-    while incorrect < stage_num:              
+    while incorrect < stage_num: 
+        print("\n")             
         print("Can you guess the word? Enter one letter to see if you are right!")
         """
         Print out _ for the remaining letters to guess
@@ -69,22 +70,25 @@ def hangman():
             if i ==  " ":
                 print(i, end=" ")
             elif i in correct_guess:
-                print(i, end=" ")
+                print(i.upper(), end=" ")
             else:
                 print("_  ", end=" ")               
         print('\n')
         guessed = input("Enter one letter please! \n").lower()    #Prompting user input
-        print(f"You entered {guessed}")
         if guessed in answers:    # Checking the answer and run corresponding response 
-            print(f"{guessed} is the right answer!")
-            correct_guess.append(guessed)   # Add correct letter to the list
-            time.sleep(1)
+            if guessed in correct_guess:
+                print("Ahhh surely you know you already pressded this letter, it's already displayed!")
+                time.sleep(0.1)
+            else:
+                print(f"{guessed.upper()} is the right answer!")
+                correct_guess.append(guessed)   # Add correct letter to the list
+                time.sleep(0.1)
         else:
-            print(f"Letter {guessed.lower()} is not in the word!")
+            print(f"Letter {guessed.upper()} is not in the word!")
             incorrect += 1    # Increment incorrect attempt
             print("\n".join(stages[:incorrect]))     # Display hangman image stage
             print("\n")
-            time.sleep(1)
+            time.sleep(0.1)
 
 def main():
     # greeting() # greeting function
