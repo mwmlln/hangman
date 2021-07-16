@@ -15,15 +15,14 @@ stages = [    '___________________',
               '|        / ＼      ',
               '| GAME        OVER!' ]
 
-stage_num = len(stages)   # getting the stage number so that it can be used as limit for incorrect attempt
-
+stage_num = len(stages)   # Setting the stage number so that it can be used as limit for incorrect attempt
 
 
 def greeting():
     """
     Prompt user to input name and display greetings
     """
-    user_name = input("Enter your name: \n")
+    user_name = input("Please enter your name: \n")
     print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
     time.sleep(1)
 
@@ -51,37 +50,39 @@ def select_question():
 
 def hangman():
     """
-    display questions and checks the answer and count attempts
+    Main game function to display questions, check the answer and count attempts.
+    Returns to the begining process if game completion cndition is not met.
+    Either word completion or reaching full stages will end the game.
     """
-    incorrect = 0
-    question = []
-    correct_guess = []
-    word = select_question()
-    answers = [i for i in word]
-    print(f"Answer is set as {answers}")
-    # word_len = len(word)   
+    incorrect = 0    # Setting the starting point of incorrect tries 
+    # question = []    
+    correct_guess = []   # Creating a empty list to store correct answers
+    word = select_question()    # Random word chosen by the function
+    answers = [i for i in word]    #Creating list of letters from the word
+    print(f"Answer is set as {answers}")    # For testing purpose, NEED TO BE DELETED ON COMPLETION
     while incorrect < stage_num:              
         print("Can you guess the word? Enter one letter to see if you are right!")
+        """
+        Print out _ for the remaining letters to guess
+        """
         for i  in word:
             if i ==  " ":
                 print(i, end=" ")
             elif i in correct_guess:
                 print(i, end=" ")
             else:
-                print("_  ", end=" ")
-                
+                print("_  ", end=" ")               
         print('\n')
-        guessed = input("Enter one letter please! \n").lower()
+        guessed = input("Enter one letter please! \n").lower()    #Prompting user input
         print(f"You entered {guessed}")
-        if guessed in answers:
-            print(f"{guessed} is the right answer")
-            correct_guess.append(guessed)
-            print(correct_guess)
+        if guessed in answers:    # Checking the answer and run corresponding response 
+            print(f"{guessed} is the right answer!")
+            correct_guess.append(guessed)   # Add correct letter to the list
             time.sleep(1)
         else:
             print(f"Letter {guessed.lower()} is not in the word!")
-            incorrect += 1
-            print("\n".join(stages[:incorrect])) 
+            incorrect += 1    # Increment incorrect attempt
+            print("\n".join(stages[:incorrect]))     # Display hangman image stage
             print("\n")
             time.sleep(1)
 
@@ -91,13 +92,10 @@ def main():
     hangman() 
         # Check data type -convert to lower case > (try: except errortype:)
             # if correct
-                # replace __ to the letter 
                 # check if the word is completed
                     # true complete the game(game_on = False) and return go to game over
                     # False back to the top of the while loop (input)
             # if the answer is wrong 
-                # increment hangman stage by 1
-                # check hangman stage is complete
                     # if complete (game_on = False) and user lose message and go to game over
                     # else go back to the top of the while loop (input)
     # game over 
