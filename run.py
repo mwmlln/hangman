@@ -32,19 +32,28 @@ def category_select():
     """
     print("~~~~~~  Please choose from one of following category: ~~~~~~")
     print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits ~~~~~~")
-    category_num = input("Enter 1,2 or 3 >>>>> \n")
-    if int(category_num) >= 0 and int(category_num) <=3:
+    category_num = 0
+    list_range = range(1,4)
+    while int(category_num) != 1-3 :
+        category_num = input("Enter 1,2 or 3 >>>>> \n")     
         try:
-            print(f"You chose {category_num}")
-            print(f"Guess all the letters included in the words in the category {category_num}")
-        except ValueError:     #NOR WORKING!!============= NEED TO FIX
+            if int(category_num) >= 0 and int(category_num) <=3:
+                print(f"try succeeded,list_range is {list_range}")
+                print(f"You chose {category_num}")
+                # print(f"Guess all the letters included in the words in the category {category_num}")
+        except Exception as e:     #NOR WORKING!!============= NEED TO FIX
             print('Please enter 1, 2 or 3')
-    time.sleep(1)
+        else:
+            return category_num
+    
+    time.sleep(0.1)
 
 def select_question():
     """
     random word selection from the list and display _ for each letter
     """
+    category_chosen = category_select()
+    print(f"Category {category_chosen} was chosen")
     word = animals[random.randint(0,5)]
     return(word)
 
@@ -56,7 +65,7 @@ def hangman():
     """
     incorrect = 0    # Setting the starting point of incorrect tries 
     # question = []    
-    correct_guess = []   # Creating a empty list to store correct answers
+    correct_guess = set([])   # Creating a empty list to store correct answers
     word = select_question()    # Random word chosen by the function
     answers = [i for i in word]    #Creating list of letters from the word
     print(f"Answer is set as {answers}")    # For testing purpose, NEED TO BE DELETED ON COMPLETION
@@ -81,7 +90,11 @@ def hangman():
                 time.sleep(0.1)
             else:
                 print(f"{guessed.upper()} is the right answer!")
-                correct_guess.append(guessed)   # Add correct letter to the list
+                correct_guess.add(guessed)   # Add correct letter to the list
+                print(f"corect_guess is {correct_guess} and answer is {set(word)}")
+                if  correct_guess == set(word) :
+                    print(f"CONGRATULATIONS! You completed the word {word.upper()}. YOU WIN!")
+                    break
                 time.sleep(0.1)
         else:
             print(f"Letter {guessed.upper()} is not in the word!")
@@ -89,19 +102,14 @@ def hangman():
             print("\n".join(stages[:incorrect]))     # Display hangman image stage
             print("\n")
             time.sleep(0.1)
+    print("GAME COMPELETED")
+
 
 def main():
     # greeting() # greeting function
-    # category_select() # choose category function NEED TO FIX VALIDATION
+    category_select() # choose category function NEED TO FIX VALIDATION
     hangman() 
-        # Check data type -convert to lower case > (try: except errortype:)
-            # if correct
-                # check if the word is completed
-                    # true complete the game(game_on = False) and return go to game over
-                    # False back to the top of the while loop (input)
-            # if the answer is wrong 
-                    # if complete (game_on = False) and user lose message and go to game over
-                    # else go back to the top of the while loop (input)
+        # Checking if the word is filled.
     # game over 
 
 main()
