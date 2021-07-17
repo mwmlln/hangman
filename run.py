@@ -91,8 +91,8 @@ def hangman():
             else:
                 print(f"{guessed.upper()} is the right answer!")
                 correct_guess.add(guessed)   # Add correct letter to the list
-                print(f"corect_guess is {correct_guess} and answer is {set(word)}")
                 if  correct_guess == set(word) :
+                    print(word.upper())
                     print(f"CONGRATULATIONS! You completed the word {word.upper()}. YOU WIN!")
                     break
                 time.sleep(0.1)
