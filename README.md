@@ -71,9 +71,6 @@ Initial design flowchart
 
 
 
-###  How to Play page 
-
-
 
 ###  Game process 
 
@@ -84,13 +81,15 @@ Initial design flowchart
 
 
 ##  Technologies 
---- 
 
 ###  Languages 
 
  * Python3
 
 ###  Other Technologies, Frameworks & Libraries 
+random and time libraries are used in the code.
+* Random is used to display a random choice from the list
+* Time is used to control the dispay speed to prevent the text displaying too fast.
 
  
  
@@ -109,7 +108,7 @@ Testing was carried out by creating each function at a time to minimise the smal
 
 ###  Validating code 
 
-PEP8
+The code is validted in PEP8 onine validator.
 
 ##  Deployment 
 ### Here is the procedre taken to deploy the project on Heroku
@@ -134,7 +133,8 @@ Prior to deply, two steps below are taken to prepare the project being deployed.
 9. once the deployment completed View button will appear. This View button will open the terminal game in the new window.
 
 ##  Credits 
---- 
+
+* https://enhancer298.net/2020/07/10/hangman1/    This site's step by step tutorial of making Hangman game was used as a general guidance and their approach is taken as a stepping stone for initial stage of this project. Also the image of the hangman stage is used from this site.
 
 ####  Coding 
 
