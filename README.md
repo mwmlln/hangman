@@ -103,7 +103,8 @@ Testing was carried out by creating each function at a time to minimise the smal
   try/except method is used to validate the user input for category choise however, it was throwing system error instead of preset printing messagge 
 
 2. Game completion with the answer that includes space between the words
-  As function checks for answer and coorect user input list as set, empty space included in the answer was preventing the both list to match after all the letters were filled. 
+  As function compares answer and correct user input list as set, empty space included in the answer was preventing the both list to match after all the letters were filled. 
+  This issue was resolved by simply creating a new variabe with removed space and this new variable is used to be reffered instead.
 
 
 ###  Validating code 
