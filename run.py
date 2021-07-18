@@ -134,6 +134,7 @@ def hangman():
                     print(word.upper())
                     print(f"CONGRATULATIONS! "
                           f"You completed the word {word.upper()}. YOU WIN!")
+                    you_win()
                     break
                 time.sleep(0.1)
         else:
@@ -142,7 +143,9 @@ def hangman():
             print("\n".join(stages[:incorrect]))  # Display hangman image
             print("\n")
             time.sleep(0.1)
-    game_over()
+    if incorrect == stage_num:
+        game_over()
+
     time.sleep(0.2)
     replay()
 
@@ -160,6 +163,15 @@ def game_over():
           "  ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║")
     print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝  "
           "   ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
+
+def you_win():
+    print(" _______ _______ _______     _______ _______ _______ _______ ")
+    print("|\     /|\     /|\     /|   |\     /|\     /|\     /|\     /|")
+    print("| +---+ | +---+ | +---+ |   | +---+ | +---+ | +---+ | +---+ |")
+    print("| |   | | |   | | |   | |   | |   | | |   | | |   | | |   | |")
+    print("| |Y  | | |O  | | |U  | |   | |W  | | |I  | | |N  | | |!  | |")
+    print("| +---+ | +---+ | +---+ |   | +---+ | +---+ | +---+ | +---+ |")
+    print("|/_____\|/_____\|/_____\|   |/_____\|/_____\|/_____\|/_____\|\n")
 
 
 def main():
