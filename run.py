@@ -30,6 +30,7 @@ def greeting():
     Prompt user to input name and display greetings
     """
     print("WELCOME TO")
+    # Title ASCII ART
     print(" ██░ ██  ▄▄▄       ███▄    █  "
           " ▄████  ███▄ ▄███▓ ▄▄▄       ███▄    █ ")
     print("▓██░ ██▒▒████▄     ██ ▀█   █  "
@@ -141,9 +142,24 @@ def hangman():
             print("\n".join(stages[:incorrect]))  # Display hangman image
             print("\n")
             time.sleep(0.1)
-    print("GAME COMPELETED")
+    game_over()
     time.sleep(0.2)
     replay()
+
+
+def game_over():
+    print(" ██████╗  █████╗ ███╗   ███╗███████╗"
+          "     ██████╗ ██╗   ██╗███████╗██████╗")
+    print("██╔════╝ ██╔══██╗████╗ ████║██╔════╝"
+          "    ██╔═══██╗██║   ██║██╔════╝██╔══██╗")
+    print("██║  ███╗███████║██╔████╔██║█████╗   "
+          "   ██║   ██║██║   ██║█████╗  ██████╔╝")
+    print("██║   ██║██╔══██║██║╚██╔╝██║██╔══╝     "
+          " ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗")
+    print("╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗  "
+          "  ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║")
+    print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝  "
+          "   ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
 
 
 def main():
