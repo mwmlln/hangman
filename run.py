@@ -119,7 +119,7 @@ def hangman():
             if guessed in correct_guess:
                 print("Ahhh surely you know you already pressded this letter,"
                       " it's already displayed!")
-                time.sleep(0.1)
+                time.sleep(0.1)           
             else:
                 print(f"{guessed.upper()} is the right answer!")
                 correct_guess.add(guessed)   # Add correct letter to the list
@@ -132,7 +132,11 @@ def hangman():
                     break
                 time.sleep(0.1)
         else:
-            print(f"Letter {guessed.upper()} is not in the word!")
+            if len(guessed) > 1:
+                print("***** Please input one letter at a time *****") 
+            else:
+                print(f"Letter {guessed.upper()} is not in the word!")
+                
             incorrect += 1    # Increment incorrect attempt
             print("\n".join(stages[:incorrect]))  # Display hangman image
             print("\n")
