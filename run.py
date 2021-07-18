@@ -9,6 +9,9 @@ sea_creatures = ["jellyfish", "sea monkey", "monkfish",
 fruits = ["papaya", "dragon fruit", "kiwi fruit", "water melon",
           "lychee", "pineapple"]
 
+category = [animals, sea_creatures, fruits
+]
+
 # stages for wrong answer
 stages = ['___________________',
           '|         |        ',
@@ -39,9 +42,17 @@ def category_select():
     print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits ~~~~~~")
     category_num = 0
     while category_num != 1 and category_num != 2 and category_num != 3:
-        category_num = int(input("Enter 1,2 or 3 >>>>> \n"))
+        category = input("Enter 1,2 or 3 >>>>> \n")
+        try: 
+            category_num = int(category)
+        except Exception as e:
+            print("Plesae enter 1, 2, or 3")
+
+    if category_num == 1 or category_num == 2 or category_num == 3:
+        return category_num
+        print(f"category_num {category_num} of type {type(category_num)}is returned")
+        
         print(type(category_num))
-        print(category_num)
 
     print(f"You chose {category_num}")
     return category_num
@@ -97,8 +108,8 @@ def hangman():
                 word_letters = word.replace(" ", "")
                 if correct_guess == set(word_letters):
                     print(word.upper())
-                    print(f"CONGRATULATIONS!"
-                          "You completed the word {word.upper()}. YOU WIN!")
+                    print(f"CONGRATULATIONS! "
+                          f"You completed the word {word.upper()}. YOU WIN!")
                     break
                 time.sleep(0.1)
         else:
@@ -108,12 +119,24 @@ def hangman():
             print("\n")
             time.sleep(0.1)
     print("GAME COMPELETED")
+    time.sleep(0.2)
+    replay()
 
 
 def main():
-    # greeting() # greeting function
     category_select()   # choose category function NEED TO FIX VALIDATION
     hangman()
 
 
+def replay():
+    print("Would you like to play again?")
+    print("Enter y or press RUN PROGRAM button above to play again."
+          "or press any other key to exit the game.")
+    play_again = input("Please press y to play, any other key to exit the game \n")
+    if play_again.lower() == "y":
+        main()
+    else:
+        print("Thank you for playing the game")
+
+greeting()  # greeting function
 main()
