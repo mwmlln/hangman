@@ -92,6 +92,7 @@ When I gain more time and knowledge of the Python languege, I intend to come bac
 random and time libraries are used in the code.
 * Random is used to display a random choice from the list
 * Time is used to control the dispay speed to prevent the text displaying too fast.
+* Code Institute's full template for Python is used in oder for the program to dispay properly in deployed site on Heroku.
 
  
  
