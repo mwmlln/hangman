@@ -65,31 +65,25 @@ def category_select():
     print("~~~~~~  Please choose from one of following category: ~~~~~~")
     print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits ~~~~~~")
     category_num = 0
-    while category_num != 1 and category_num != 2 and category_num != 3:
-        category = input("Enter 1,2 or 3 >>>>> \n")
-        try: 
-            category_num = int(category)
-        except Exception as e:
-            print("Plesae enter 1, 2, or 3")
-
-    if category_num == 1 or category_num == 2 or category_num == 3:
-        return category_num
-        print(f"category_num {category_num} of type {type(category_num)}is returned")
-        
-        print(type(category_num))
-
-    print(f"You chose {category_num}")
-    return category_num
-    time.sleep(0.1)
-
+    while not 1 <= category_num <= 3:
+        try:
+            category_num = int(input("Please enter 1,2 or 3 >>>>> \n")) 
+            if 1 <= category_num <= 3:
+                return category_num
+            else:
+                pass
+        except ValueError as e:
+            print("Only number 1, 2 or 3 accepted")
 
 def select_question():
     """
     random word selection from the list and display _ for each letter
     """
     category_chosen = category_select()
-    print(f"Category {category_chosen} was chosen")
-    word = animals[random.randint(0, 5)]
+    list_num  = category_chosen - 1
+    print(f"This is list_num {list_num} ")
+    print(f"Category {category_chosen}  {category[list_num]} was chosen")
+    word = category[list_num][random.randint(0, 5)]
     return(word)
 
 
