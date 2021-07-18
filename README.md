@@ -62,7 +62,7 @@ This site is created following user’s expectations in mind.
 
 ###  Skeleton 
 
-Initial design flowchart
+Initial design flowchart (ss_images/hangman_flowchart_ss.jpg)
 
 
 
@@ -78,6 +78,8 @@ Initial design flowchart
 
 #### Features Left to Implement
 
+I am fully aware that the code wtitten in the program is not the most efficient way. The decision was made to focus on creating workaround solutions to build a fully functioning program with the code that I learned during the rather short space of time given for the course module completion and the project submission deadline.
+When I gain more time and knowledge of the Python languege, I intend to come back to this program and try improving program efficiently and intractivity. 
 
 
 ##  Technologies 
@@ -134,12 +136,17 @@ Prior to deply, two steps below are taken to prepare the project being deployed.
 
 ##  Credits 
 
-* https://enhancer298.net/2020/07/10/hangman1/    This site's step by step tutorial of making Hangman game was used as a general guidance and their approach is taken as a stepping stone for initial stage of this project. Also the image of the hangman stage is used from this site.
-
 ####  Coding 
+
+* https://enhancer298.net/2020/07/10/hangman1/    This site's tutorial of making Hangman game was used as a general guidance and their approach is used as a stepping stone for initial stage of this project. Also the image of the hangman stage is used from this site.
+
+* https://www.python-izm.com/   Used for ganetal reference for python code
+
 
 
 
 ###  Media 
+
+* https://diagrams.net/       This site was used to create the flowchart in the planning stage of the projet. 
 
 
