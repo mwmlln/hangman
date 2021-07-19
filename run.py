@@ -105,7 +105,7 @@ def select_question():
     list_num  = category_chosen - 1
     print(f"Category {category_chosen}  was chosen")
     if category_chosen == 4:
-        word = category[random.randint(0, len(category))][random.randint(0, 5)]
+        word = category[random.randint(0, len(category)+1)][random.randint(0, 5)]
         return(word)
     else:
         word = category[list_num][random.randint(0, 5)]
@@ -122,8 +122,8 @@ def hangman():
     incorrect = 0    # Setting the starting point of incorrect attempts
     correct_guess = set([])   # Creating a empty list to store correct answers
     word = select_question()    # Random word chosen by the function
-    check_answer = word.replace(" ","")   # Removing the space for checking answer
-    answers = [i for i in check_answer]    # Create list from the word without space
+    check_answer = word.replace(" ","")   # Removing space from answer
+    answers = [i for i in check_answer]    # Create list from the word
     print(f"Answer is set as {answers}")    # ******  For testing purpose ********
     while incorrect < stage_num:
         print("\n")
