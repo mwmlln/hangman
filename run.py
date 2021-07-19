@@ -172,11 +172,6 @@ def you_win():
     print("|/_____\|/_____\|/_____\|   |/_____\|/_____\|/_____\|/_____\|\n")
 
 
-def main():
-    category_select()   # choose category function NEED TO FIX VALIDATION
-    hangman()
-
-
 def replay():
     print("Would you like to play again?")
     print("Enter y or press RUN PROGRAM button above to play again."
@@ -188,4 +183,4 @@ def replay():
         print("Thank you for playing the game")
 
 greeting()  # greeting function
-main()
+hangman()
