@@ -9,8 +9,7 @@ sea_creatures = ["jellyfish", "sea monkey", "monkfish",
 fruits = ["papaya", "dragon fruit", "kiwi fruit", "water melon",
           "lychee", "pineapple"]
 
-category = [animals, sea_creatures, fruits
-]
+category = [animals, sea_creatures, fruits]
 
 # stages for wrong answer
 stages = ['___________________',
@@ -97,8 +96,9 @@ def hangman():
     incorrect = 0    # Setting the starting point of incorrect attempts
     correct_guess = set([])   # Creating a empty list to store correct answers
     word = select_question()    # Random word chosen by the function
-    answers = [i for i in word]    # Create list from the word
-    print(f"Answer is set as {answers}")    # For testing purpose
+    check_answer = word.replace(" ","")   # Removing the space for checking answer
+    answers = [i for i in check_answer]    # Create list from the word without space
+    print(f"Answer is set as {answers}")    # ******  For testing purpose ********
     while incorrect < stage_num:
         print("\n")
         print("Can you guess the word?")
@@ -135,7 +135,7 @@ def hangman():
             if len(guessed) > 1:
                 print("***** Please input one letter at a time *****") 
             else:
-                print(f"Letter {guessed.upper()} is not in the word!")
+                print(f"\" {guessed.upper()} \" is not in included in correct answer!")
                 
             incorrect += 1    # Increment incorrect attempt
             print("\n".join(stages[:incorrect]))  # Display hangman image
@@ -148,8 +148,7 @@ def hangman():
     replay()
 
 
-def game_over():
-    print(" ██████╗  █████╗ ███╗   ███╗███████╗"
+def game_over():1██████╗"
           "     ██████╗ ██╗   ██╗███████╗██████╗")
     print("██╔════╝ ██╔══██╗████╗ ████║██╔════╝"
           "    ██╔═══██╗██║   ██║██╔════╝██╔══██╗")
@@ -184,3 +183,10 @@ def replay():
 
 greeting()  # greeting function
 hangman()
+
+# ===== Still to fix ====
+# sapce included in correct_guess list that needs to be removes
+# brief instructions on how to play the game
+# include the 4th option that selects a word from all the list
+# when category chosen, feed back on the cagtegory name 
+
