@@ -33,8 +33,8 @@ This game is created for anyone who wants to have fun playing a word game.
 
 ####  Site owner’s goal 
 
-The main objective for creating this site was to gain skill set to build a simple but fun terminal based game
-
+The main objective for creating this site was to gain skill set to build a simple but fun terminal based game. 
+Hangman game is widely available on the web so I have created extra user intractivity with user by giving them a choice of category. This narrows down possibility of the answer word hence the difficulty lavel goes down while by choosing all category gives more wide possibility of answer to make it harder to get a right answer.
 
 ###  User Stories 
 
@@ -98,15 +98,25 @@ random and time libraries are used in the code.
  
 ##  Testing 
 Testing was carried out by creating each function at a time to minimise the small errors impacting the whole project.
+* [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) was used throughout the projet's building/testing stage to troubleshoot on errors.
+
+*
+
 
 ### Here are some of the challenges I encountered and steps taken to fix.
 
 1. Validating user input for category choises.
   try/except method is used to validate the user input for category choise however, it was throwing system error instead of preset printing messagge 
+  This was fixed by changing the condition for the while loop.
+
 
 2. Game completion with the answer that includes space between the words
   As function compares answer and correct user input list as set, empty space included in the answer was preventing the both list to match after all the letters were filled. 
   This issue was resolved by simply creating a new variabe with removed space and this new variable is used to be reffered instead.
+
+3. category_choise function was repeating despite the user input being the right condition. 
+I was spending quite some time changing the approach within the while loop in the function without any success.
+ Thanks to Johann in Code Institure's tutor support who has pointed out the function being called in main function and then again when the return value is set to a variable. The solution was very simple just to remove it from main function.
 
 
 ###  Validating code 
@@ -143,6 +153,7 @@ Prior to deply, two steps below are taken to prepare the project being deployed.
 
 * https://www.python-izm.com/   Used for ganetal reference for python code
 
+* [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) This site was used to pinpoint where and why the errors are causing.
 
 
 
