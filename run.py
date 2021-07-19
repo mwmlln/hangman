@@ -54,7 +54,7 @@ def greeting():
 
     user_name = input("Please enter your name: \n")
     print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
-    time.sleep(1)
+    time.sleep(0.3)
 
 
 def category_select():
@@ -62,12 +62,12 @@ def category_select():
     Prompt user to select a category for the game and vaidate the input
     """
     print("~~~~~~  Please choose from one of following category: ~~~~~~")
-    print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits ~~~~~~")
+    print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits 4. All the category mixed  ~~~~~~")
     category_num = 0
-    while not 1 <= category_num <= 3:
+    while not 1 <= category_num <= 4:
         try:
-            category_num = int(input("Please enter 1,2 or 3 >>>>> \n")) 
-            if 1 <= category_num <= 3:
+            category_num = int(input("Please enter 1, 2, 3 or 4  >>>  ")) 
+            if 1 <= category_num <= 4:
                 return category_num
             else:
                 pass
@@ -78,13 +78,17 @@ def select_question():
     """
     random word selection from the list and display _ for each letter
     """
+    time.sleep(0.3)
     category_chosen = category_select()
     list_num  = category_chosen - 1
-    # print(f"This is list_num {list_num} ")
-    print(f"Category {category_chosen + 1}  was chosen")
-    word = category[list_num][random.randint(0, 5)]
-    return(word)
-
+    print(f"Category {category_chosen}  was chosen")
+    if category_chosen == 4:
+        word = category[random.randint(0, 3)][random.randint(0, 5)]
+        return(word)
+    else:
+        word = category[list_num][random.randint(0, 5)]
+        return(word)
+       
 
 def hangman():
     """
