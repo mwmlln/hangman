@@ -80,8 +80,8 @@ def select_question():
     """
     category_chosen = category_select()
     list_num  = category_chosen - 1
-    print(f"This is list_num {list_num} ")
-    print(f"Category {category_chosen}  {category[list_num]} was chosen")
+    # print(f"This is list_num {list_num} ")
+    print(f"Category {category_chosen + 1}  was chosen")
     word = category[list_num][random.randint(0, 5)]
     return(word)
 
@@ -148,7 +148,8 @@ def hangman():
     replay()
 
 
-def game_over():1██████╗"
+def game_over():
+    print(" ██████╗  █████╗ ███╗   ███╗███████╗"
           "     ██████╗ ██╗   ██╗███████╗██████╗")
     print("██╔════╝ ██╔══██╗████╗ ████║██╔════╝"
           "    ██╔═══██╗██║   ██║██╔════╝██╔══██╗")
