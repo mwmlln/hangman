@@ -118,6 +118,7 @@ Testing was carried out by creating each function at a time to minimise the smal
 I was spending quite some time changing the approach within the while loop in the function without any success.
  Thanks to Johann in Code Institure's tutor support who has pointed out the function being called in main function and then again when the return value is set to a variable. The solution was very simple just to remove it from main function.
 
+4. When len(category) was placed as parameter in randint instead of number to accomodate the flexibility for list expansion, an error occurd but not every time. This was because the randint(len(category)) produces 1 bigger number than list index available. By placing -1 after the parameter has resolved the issue.
 
 ###  Validating code 
 
