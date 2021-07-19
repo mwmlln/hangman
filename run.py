@@ -178,7 +178,7 @@ def replay():
           "or press any other key to exit the game.")
     play_again = input("Please press y to play, any other key to exit the game \n")
     if play_again.lower() == "y":
-        main()
+        hangman()
     else:
         print("Thank you for playing the game")
 
