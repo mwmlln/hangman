@@ -50,11 +50,33 @@ def greeting():
           "     ░        ░         ░  ░         ░ ")
 
 
-
-
     user_name = input("Please enter your name: \n")
     print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
     time.sleep(0.3)
+
+
+def instructions():
+    print("Would you like a brief instruction on how to play?")
+    instruction_on = input("Press y if yes, any other key to progress to the game  >> ")
+    if instruction_on.lower() == "y":
+        print("Here is instruction on how to play \n"
+              "1. Choose a category from 3 choices or 4 for all the category mixed up.\n"
+              "Corresponding number of underscore'_' will displayed as the letter in the word.\n"
+              "Guess the word and press ONLY one key that you think is included in the word.\n"
+              "Space between the words is not included, so only alphabet key can get you correct.\n"
+              "If your answer is correct, letter will be displayed instead of the underscore'_'.\n"
+              "If you guess all the letters and complete the word, you win the game\n"
+              "If incorrect answer is typed, hangman image will progress.\n"
+              "If incorrect attempt reaches to limit and hangman image completes, game over!")
+        print("Are you ready to play? ")
+        game_start = input("Press Any key to start a game >>")
+        if game_start != None:
+            pass
+        else:
+            print("You need to press any key to continue")
+    else:
+        pass
+    
 
 
 def category_select():
@@ -83,7 +105,7 @@ def select_question():
     list_num  = category_chosen - 1
     print(f"Category {category_chosen}  was chosen")
     if category_chosen == 4:
-        word = category[random.randint(0, 3)][random.randint(0, 5)]
+        word = category[random.randint(0, len(category))][random.randint(0, 5)]
         return(word)
     else:
         word = category[list_num][random.randint(0, 5)]
@@ -187,11 +209,10 @@ def replay():
         print("Thank you for playing the game")
 
 greeting()  # greeting function
+instructions()
 hangman()
 
 # ===== Still to fix ====
-# sapce included in correct_guess list that needs to be removes
 # brief instructions on how to play the game
-# include the 4th option that selects a word from all the list
-# when category chosen, feed back on the cagtegory name 
+# random number parameter to set as a length of the list
 
