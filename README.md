@@ -62,7 +62,10 @@ This site is created following user’s expectations in mind.
 
 ###  Skeleton 
 
-Initial design flowchart (ss_images/hangman_flowchart_ss.jpg)
+Initial design flowchart 
+<details><summary>Hangman Flowchart</summary>
+<img src="ss_images/hangman_flowchart_ss.jpg" width="500">
+</details>
 
 
 
@@ -98,6 +101,7 @@ random and time libraries are used in the code.
  
 ##  Testing 
 Testing was carried out by creating each function at a time to minimise the small errors impacting the whole project.
+
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) was used throughout the projet's building/testing stage to troubleshoot on errors.
 
 *
@@ -105,18 +109,25 @@ Testing was carried out by creating each function at a time to minimise the smal
 
 ### Here are some of the challenges I encountered and steps taken to fix.
 
-1. Validating user input for category choises.
-  try/except method is used to validate the user input for category choise however, it was throwing system error instead of preset printing messagge 
+1. Validating user input for category choices.
+  try/except method is used to validate the user input for category choice however, it was throwing system error instead of preset printing messagge 
   This was fixed by changing the condition for the while loop.
 
+    <details><summary>category_choice error</summary>
+    <img src="ss_images/category_value_error.jpg" width="500">
+    </details>
 
-2. Game completion with the answer that includes space between the words
-  As function compares answer and correct user input list as set, empty space included in the answer was preventing the both list to match after all the letters were filled. 
-  This issue was resolved by simply creating a new variabe with removed space and this new variable is used to be reffered instead.
+2. Game completion with the answer that  includes space between the words
+As function compares answer and correct user input list as set, empty space included in the answer was preventing the both list to match after all the letters were filled. 
+This issue was resolved by simply creating a new variabe with removed space and this new variable is used to be reffered instead.
 
-3. category_choise function was repeating despite the user input being the right condition. 
+3. category_choice function was repeating despite the user input being the right condition. 
 I was spending quite some time changing the approach within the while loop in the function without any success.
- Thanks to Johann in Code Institure's tutor support who has pointed out the function being called in main function and then again when the return value is set to a variable. The solution was very simple just to remove it from main function.
+Thanks to Johann in Code Institure's tutor support who has pointed out the function being called in main function and then again when the return value is set to a variable. The solution was very simple just to remove it from main function.
+    <details><summary>category_choice while repeating error</summary>
+    <img src="ss_images/category_while_repeat_error.jpg" width="500">
+    </details>
+
 
 4. When len(category) was placed as parameter in randint instead of number to accomodate the flexibility for list expansion, an error occurd but not every time. This was because the randint(len(category)) produces 1 bigger number than list index available. By placing -1 after the parameter has resolved the issue.
 
