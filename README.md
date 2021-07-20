@@ -6,16 +6,12 @@ This site is created as a Milestone project for Code Institute's Software Develo
 
 Here is a link to the live project: [Hangman](https://https://pp3-hangman.herokuapp.com/)
 
+<img src="ss_images/hangman_welcome_ss.jpg" width="500">
 
 ## The purpose for this site 
 ---
 Hangman is a classic terminal based game that a lot of poeple are familiar with.
 This game has same familiar structure and have three word categories that users can choose from upon starting the game.
-
-
-
-
-Contents:
 
 
 ## User experience
@@ -24,11 +20,11 @@ Contents:
 
 This game is created for anyone who wants to have fun playing a word game.
 
-
-###  Strategy 
----
-
 ####  User goals 
+
+* User wants to enjoy playing word game.
+* User wants to win the game and have winnig message received
+* User wants to have clear result for their game 
 
 
 ####  Site owner’s goal 
@@ -42,42 +38,87 @@ This site is created following user’s expectations in mind.
 
 * A first time user would like to:
     * Have a clear instruction on what the game objective and process
-    * 
+    * Clear feedback for thier action
+    * Graphical display for fun factor
 
 
 * A returning user would like to have the following additional 
    * Quick response time
+   * Clear feedback for thier input
+   * Choice to skip the instruction and return to the game
 
 * As a site creator I would like to provide:
-  * Interactive game 
+  * Interactive game with 
   * Clear feedback to user's response
+  * Provide choice of difficulty level
 
 
-###  Scope 
+###  Designing stage 
 
-
-###  Structure 
-
-
-
-###  Skeleton 
-
+This is the flowchart made in the planning stage of the project. This has been used to visualise the functions and behaviour control during the building stage of the project.
+.
 Initial design flowchart 
 <details><summary>Hangman Flowchart</summary>
 <img src="ss_images/hangman_flowchart_ss.jpg" width="500">
 </details>
 
 
-
 ##  Features 
 ---
 
+The game has following features
 
+* Display greetings with user name
+  
+* Display the instruction when user choose to
+* Category choice user can select from
+* Playing game
+* Choice to play again or exit the game
 
 
 ###  Game process 
 
-* 
+1.  Upon loading the page, large logo ascii art displays and asks user to input a name.
+As the name is not to relavant to the game, user can input any charactor desired.
+When uesr completes input of thier name, welcome message appears.
+
+    <details><summary>Logo and welcome message</summary>
+    <img src="ss_images/hangman_welcome_ss.jpg" width="500">
+    </details>
+
+2. User will be asked if they want a brief instruction displayed or skip to start a game.
+If y is pressed for yes, instruction will be displayed.
+    <details><summary>Instruction display</summary>
+    <img src="" width="500">
+    </details>
+
+3. Before the game starts, user has a choice of categories to select.
+
+4. Once the category was chosen, underscores displays. These underscores represent a letter in the word selected as the answer.
+
+    <details><summary>Selecting a category and display of underscores</summary>
+    <img src="ss_images/category_and-geme_begining.jpg" width="500">
+    </details>   
+
+5. User is now asked to guess the word and enter one letter.
+
+6. If the user input letter is included in the selected word, user get notified and the letter replaces underscore.
+
+7. If the user's input was incorrect (i.e letter not in the selected word), user will be notified and hangman image display increased one stage at a time.
+
+8. Game will be compeleted weather user fills all the letters in the selected word or hangman image completely displays.
+
+   * In the event of user's win, the keyboard layout win message appears.
+        <details><summary>You WIN display</summary>
+        <img src="ss_images/win_display.jpg" width="500">
+        </details>
+   * When the game completes with reaching incorrect attempt's limit, big game over ascii text will display below completed hangman image.
+          <details><summary>You WIN display</summary>
+          <img src="ss_images/game_over_ss.jpg" width="500">
+          </details>
+
+
+9. User will now be asked if they want to start another game or exit.
 
 #### Features Left to Implement
 
@@ -92,7 +133,7 @@ When I gain more time and knowledge of the Python languege, I intend to come bac
  * Python3
 
 ###  Other Technologies, Frameworks & Libraries 
-random and time libraries are used in the code.
+random and time functions are used in the code.
 * Random is used to display a random choice from the list
 * Time is used to control the dispay speed to prevent the text displaying too fast.
 * Code Institute's full template for Python is used in oder for the program to dispay properly in deployed site on Heroku.
@@ -103,9 +144,9 @@ random and time libraries are used in the code.
 Testing was carried out by creating each function at a time to minimise the small errors impacting the whole project.
 
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) was used throughout the projet's building/testing stage to troubleshoot on errors.
-
-*
-
+    <details><summary>Python Tutor</summary>
+    <img src="ss_images/category_while_repeat_python_tutor.jpg" width="500">
+          </details>
 
 ### Here are some of the challenges I encountered and steps taken to fix.
 
@@ -117,19 +158,19 @@ Testing was carried out by creating each function at a time to minimise the smal
     <img src="ss_images/category_value_error.jpg" width="500">
     </details>
 
-2. Game completion with the answer that  includes space between the words
-As function compares answer and correct user input list as set, empty space included in the answer was preventing the both list to match after all the letters were filled. 
-This issue was resolved by simply creating a new variabe with removed space and this new variable is used to be reffered instead.
+2. Space inside selected answer preventing game competion.
+As function compares answer and correct user input list as set, empty space included in the answer was preventing the both lists to match eventhough all the letters were filled. 
+This issue was resolved by simply creating a new variabe with no space and set the function to refer this list instead.
 
 3. category_choice function was repeating despite the user input being the right condition. 
 I was spending quite some time changing the approach within the while loop in the function without any success.
-Thanks to Johann in Code Institure's tutor support who has pointed out the function being called in main function and then again when the return value is set to a variable. The solution was very simple just to remove it from main function.
+Thanks to Johann in Code Institure's tutor support who has pointed out eventually that the function is called twice (first inside main function and then again when variable is set using the return value from the function). The solution was very simple just to remove the one from main function.
     <details><summary>category_choice while repeating error</summary>
     <img src="ss_images/category_while_repeat_error.jpg" width="500">
     </details>
 
 
-4. When len(category) was placed as parameter in randint instead of number to accomodate the flexibility for list expansion, an error occurd but not every time. This was because the randint(len(category)) produces 1 bigger number than list index available. By placing -1 after the parameter has resolved the issue.
+4. When len(category) was placed as parameter in randint instead of number to accomodate the flexibility for list items expansion, an error occurd but not every time. This was because the randint(len(category)) produces 1 bigger number than list index available. By placing -1 after the parameter has resolved the issue.
 
 ###  Validating code 
 
@@ -168,12 +209,9 @@ Prior to deply, two steps below are taken to prepare the project being deployed.
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) This site was used to pinpoint where and why the errors are causing.
 
 
-
 ###  Media 
 
 * https://diagrams.net/       This site was used to create the flowchart in the planning stage of the projet. 
-* http://patorjk.com/software/taag/   Title ascii art was created in this site
-
-
+* http://patorjk.com/software/taag/   ascii art for  title/win/game over  was created in this site
 
 
