@@ -62,7 +62,7 @@ def display_instructions():
     instruction_on = input("Press y if yes, any other key to play game : \n")
     if instruction_on.lower() == "y":
         instructions_text()
-        print("Are you ready to play? ")
+        print("Are you ready to play?")
         game_start = input("Press Any key to start a game >> \n")
         if game_start != None:   # Any key input starts game
             pass
