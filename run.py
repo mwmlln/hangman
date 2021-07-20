@@ -88,8 +88,8 @@ def category_select():
     """
     Prompt user to select a category for the game and vaidate the input
     """
-    print("~~~~~~  Please choose from one of following category: ~~~~~~\n")
-    print("~~ 1. Animals, 2. Sea creatures, 3. Fruits"
+    print("~~~~~~  Please choose one of following category: ~~~~~~\n")
+    print("~~ 1. Animals, 2. Sea creatures, 3. Fruits "
           "4. All the category mixed  ~~\n")
     category_num = 0
     while not 1 <= category_num <= 4:
@@ -203,7 +203,6 @@ def you_win():
     print("| |Y  | | |O  | | |U  | |   | |W  | | |I  | | |N  | | |!  | |")
     print("| +---+ | +---+ | +---+ |   | +---+ | +---+ | +---+ | +---+ |")
     print("|/_____\|/_____\|/_____\|   |/_____\|/_____\|/_____\|/_____\|\n")
-    print(f"Congratulations!")
 
 
 def replay():
