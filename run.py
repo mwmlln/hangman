@@ -75,18 +75,17 @@ def display_instructions():
 def instructions_text():
     print("Here is instruction on how to play \n"
           "1. Choose a category\n"
-          "2. Same number of Underscore'_' will be displayed \n"
+          "2. The ame number of Underscore'_' will be displayed \n"
           "   as letters in the word.\n"
           "3. Guess the word\n"
-          "   press ONLY one key that you think is in the word.\n"
+          "   Only one alphabet key should be entered at each time.\n"
           "   Space between the words is considered incorrect.\n"
-          "   So only one alphabet key should be entered.\n"
           "4. If your answer is correct, letter will be displayed\n"
           "   instead of the underscore'_'.\n"
           "5. If you guess all the letters and complete the word,\n"
           "   you win the game\n"
           "7. If incorrect answer is entered, hangman image will progress.\n"
-          "8. If incorrect attempt reaches to limit \n"
+          "8. If number of incorrect attempts reaches the limit \n"
           "   and hangman image completes, game over!")
 
 def category_select():
@@ -144,7 +143,7 @@ def start_game():
         """
         for i in word:
             if i == " ":
-                print(i, end=" ")
+                print(i, end="  ")
             elif i in correct_guess:
                 print(i.upper(), end=" ")
             else:
