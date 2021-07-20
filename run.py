@@ -61,7 +61,7 @@ def instructions():
         print("Here is instruction on how to play \n"
               "1. Choose a category\n"
               "2. Same number of Underscore'_' will be displayed \n"
-              "   as letters in the word.\n "
+              "   as letters in the word.\n"
               "3. Guess the word\n"
               "   press ONLY one key that you think is in the word.\n"
               "   Space between the words is considered incorrect.\n"
@@ -74,7 +74,7 @@ def instructions():
               "8. If incorrect attempt reaches to limit \n"
               "   and hangman image completes, game over!")
         print("Are you ready to play? ")
-        game_start = input("Press Any key to start a game >>")
+        game_start = input("Press Any key to start a game >> \n")
         if game_start != None:
             pass
         else:
@@ -88,12 +88,13 @@ def category_select():
     """
     Prompt user to select a category for the game and vaidate the input
     """
-    print("~~~~~~  Please choose from one of following category: ~~~~~~")
-    print("~~~~~~ 1. Animals, 2. Sea creatures, 3. Fruits 4. All the category mixed  ~~~~~~")
+    print("~~~~~~  Please choose from one of following category: ~~~~~~\n")
+    print("~~ 1. Animals, 2. Sea creatures, 3. Fruits"
+          "4. All the category mixed  ~~\n")
     category_num = 0
     while not 1 <= category_num <= 4:
         try:
-            category_num = int(input("Please enter 1, 2, 3 or 4  >>>  ")) 
+            category_num = int(input("Please enter 1, 2, 3 or 4  >>>  \n")) 
             if 1 <= category_num <= 4:
                 return category_num
             else:
