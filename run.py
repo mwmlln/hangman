@@ -24,7 +24,7 @@ stages = ['___________________',
 stage_num = len(stages)
 
 
-def greeting():
+def display_greeting():
     """
     Prompt user to input name and display greetings
     """
@@ -54,35 +54,40 @@ def greeting():
     pause()
 
 
-def instructions():
+def display_instructions():
+    """
+    Ask user if instruction is need and displays instruction as requested
+    """
     print("Would you like a brief instruction on how to play?")
     instruction_on = input("Press y if yes, any other key to play game : \n")
     if instruction_on.lower() == "y":
-        print("Here is instruction on how to play \n"
-              "1. Choose a category\n"
-              "2. Same number of Underscore'_' will be displayed \n"
-              "   as letters in the word.\n"
-              "3. Guess the word\n"
-              "   press ONLY one key that you think is in the word.\n"
-              "   Space between the words is considered incorrect.\n"
-              "   So only one alphabet key should be entered.\n"
-              "4. If your answer is correct, letter will be displayed\n"
-              "   instead of the underscore'_'.\n"
-              "5. If you guess all the letters and complete the word,\n"
-              "   you win the game\n"
-              "7. If incorrect answer is entered, hangman image will progress.\n"
-              "8. If incorrect attempt reaches to limit \n"
-              "   and hangman image completes, game over!")
+        instructions_text()
         print("Are you ready to play? ")
         game_start = input("Press Any key to start a game >> \n")
-        if game_start != None:
+        if game_start != None:   # Any key input starts game
             pass
         else:
             print("You need to press any key to continue")
     else:
         pass
-    
 
+
+def instructions_text():
+    print("Here is instruction on how to play \n"
+          "1. Choose a category\n"
+          "2. Same number of Underscore'_' will be displayed \n"
+          "   as letters in the word.\n"
+          "3. Guess the word\n"
+          "   press ONLY one key that you think is in the word.\n"
+          "   Space between the words is considered incorrect.\n"
+          "   So only one alphabet key should be entered.\n"
+          "4. If your answer is correct, letter will be displayed\n"
+          "   instead of the underscore'_'.\n"
+          "5. If you guess all the letters and complete the word,\n"
+          "   you win the game\n"
+          "7. If incorrect answer is entered, hangman image will progress.\n"
+          "8. If incorrect attempt reaches to limit \n"
+          "   and hangman image completes, game over!")
 
 def category_select():
     """
@@ -111,7 +116,6 @@ def select_question():
     list_num  = category_chosen - 1
     print(f"Category {category_chosen}  was chosen")
     if category_chosen == 4:
-        random_num = random.randint(0, len(category) - 1)
         word = category[random.randint(0, len(category) - 1)][random.randint(0, 5)]
         return(word)
     else:
@@ -119,7 +123,7 @@ def select_question():
         return(word)
        
 
-def hangman():
+def start_game():
     """
     Main game function to display questions, check the answer and
     count attempts.
@@ -134,9 +138,7 @@ def hangman():
     wrong_guess = []   # Incorrect letters goes in here
     # print(f"Answer is set as {answers}")    # ******  For testing purpose ********
     while incorrect < stage_num:
-        print("\n")
-        print("Can you guess the word?")
-        print("Enter one letter to see if you are right!")
+        display_guess_message()
         """
         Print out _ for the remaining letters to guess
         """
@@ -151,8 +153,7 @@ def hangman():
         guessed = input("Enter one letter please! \n").lower()
         if guessed in answers:  # Checking the answer and determine the action
             if guessed in correct_guess:
-                print("Ahhh surely you know you already pressded this letter,"
-                      " it's already displayed!")
+                display_alredy_used()
                 pause()
             else:
                 print(f"{guessed.upper()} is the right answer!")
@@ -184,6 +185,15 @@ def hangman():
     pause()
     replay()
 
+def display_guess_message():
+    print("\n")
+    print("Can you guess the word?")
+    print("Enter one letter to see if you are right!")
+
+
+def display_alredy_used():
+    print("Ahhh surely you know you already pressded this letter,"
+          " it's already displayed!")
 
 def game_over():
     print(" ██████╗  █████╗ ███╗   ███╗███████╗"
@@ -215,7 +225,7 @@ def replay():
           "or press any other key to exit the game.")
     play_again = input("Please press y to play, any other key to exit the game \n")
     if play_again.lower() == "y":
-        hangman()
+        start_game()
     else:
         print("Thank you for playing the game")
 
@@ -224,9 +234,9 @@ def pause():
     time.sleep(0.2)
 
 
-greeting()  # greeting function
-instructions() # display instruction if user chooses
-hangman()  
+display_greeting()  # greeting function
+display_instructions() # display instruction if user chooses
+start_game()  
 
 
 # ===== Still to fix ====
