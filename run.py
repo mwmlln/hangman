@@ -56,7 +56,7 @@ def greeting():
 
 def instructions():
     print("Would you like a brief instruction on how to play?")
-    instruction_on = input("Press y if yes, any other key toplay game : \n")
+    instruction_on = input("Press y if yes, any other key to play game : \n")
     if instruction_on.lower() == "y":
         print("Here is instruction on how to play \n"
               "1. Choose a category\n"
@@ -131,6 +131,7 @@ def hangman():
     word = select_question()    # Random word chosen by the function
     check_answer = word.replace(" ","")   # Removing space from answer
     answers = [i for i in check_answer]    # Create list from the word
+    wrong_guess = []   # Incorrect letters goes in here
     # print(f"Answer is set as {answers}")    # ******  For testing purpose ********
     while incorrect < stage_num:
         print("\n")
@@ -173,6 +174,8 @@ def hangman():
             incorrect += 1    # Increment incorrect attempt
             print("\n".join(stages[:incorrect]))  # Display hangman image
             print("\n")
+            wrong_guess.append(guessed)
+            print(f"Your incorrect guesses: {wrong_guess} ")
             time.sleep(0.1)
     if incorrect == stage_num:
         game_over()
