@@ -49,7 +49,6 @@ def greeting():
     print(" ░  ░  ░      ░  ░         ░  "
           "     ░        ░         ░  ░         ░ ")
 
-
     user_name = input("Please enter your name: \n")
     print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
     time.sleep(0.3)
@@ -57,25 +56,23 @@ def greeting():
 
 def instructions():
     print("Would you like a brief instruction on how to play?")
-    instruction_on = input(
-        "Press y if yes, any other key to progress to the game:")
+    instruction_on = input("Press y if yes, any other key toplay game : \n")
     if instruction_on.lower() == "y":
         print("Here is instruction on how to play \n"
-              "1. Choose a category from 3 choices or 4 for all "
-              "the category mixed up.\n"
-              "2. Corresponding number of underscore'_' will displayed as the "
-              "letter in the word.\n"
-              "3. Guess the word and press ONLY one key that you think is"
-              "included in the word.\n"
-              "4. Space between the words is not included,"
-              " so only alphabet key can get you correct.\n"
-              "5. If your answer is correct, letter will be displayed"
-              " instead of the underscore'_'.\n"
-              "6. If you guess all the letters and complete the word,"
-              " you win the game\n"
-              "7. If incorrect answer is typed, hangman image will progress.\n"
-              "8. If incorrect attempt reaches to limit and hangman image"
-              " completes, game over!")
+              "1. Choose a category\n"
+              "2. Same number of Underscore'_' will be displayed \n"
+              "   as letters in the word.\n "
+              "3. Guess the word\n"
+              "   press ONLY one key that you think is in the word.\n"
+              "   Space between the words is considered incorrect.\n"
+              "   So only one alphabet key should be entered.\n"
+              "4. If your answer is correct, letter will be displayed\n"
+              "   instead of the underscore'_'.\n"
+              "5. If you guess all the letters and complete the word,\n"
+              "   you win the game\n"
+              "7. If incorrect answer is entered, hangman image will progress.\n"
+              "8. If incorrect attempt reaches to limit \n"
+              "   and hangman image completes, game over!")
         print("Are you ready to play? ")
         game_start = input("Press Any key to start a game >>")
         if game_start != None:
@@ -113,6 +110,7 @@ def select_question():
     list_num  = category_chosen - 1
     print(f"Category {category_chosen}  was chosen")
     if category_chosen == 4:
+        random_num = random.randint(0, len(category) - 1)
         word = category[random.randint(0, len(category) - 1)][random.randint(0, 5)]
         return(word)
     else:
@@ -132,7 +130,7 @@ def hangman():
     word = select_question()    # Random word chosen by the function
     check_answer = word.replace(" ","")   # Removing space from answer
     answers = [i for i in check_answer]    # Create list from the word
-    print(f"Answer is set as {answers}")    # ******  For testing purpose ********
+    # print(f"Answer is set as {answers}")    # ******  For testing purpose ********
     while incorrect < stage_num:
         print("\n")
         print("Can you guess the word?")
@@ -204,6 +202,7 @@ def you_win():
     print("| |Y  | | |O  | | |U  | |   | |W  | | |I  | | |N  | | |!  | |")
     print("| +---+ | +---+ | +---+ |   | +---+ | +---+ | +---+ | +---+ |")
     print("|/_____\|/_____\|/_____\|   |/_____\|/_____\|/_____\|/_____\|\n")
+    print(f"Congratulations!")
 
 
 def replay():
@@ -216,11 +215,12 @@ def replay():
     else:
         print("Thank you for playing the game")
 
+    
 greeting()  # greeting function
-instructions()
-hangman()
+instructions() # display instruction if user chooses
+hangman()  
+
 
 # ===== Still to fix ====
-# brief instructions on how to play the game  == input not displaying in Heroku until enter=====
 # random number parameter to set as a length of the list 
 
