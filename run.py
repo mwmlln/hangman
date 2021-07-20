@@ -51,7 +51,7 @@ def greeting():
 
     user_name = input("Please enter your name: \n")
     print(f"~~~~~~  Welcome to hangman game, {user_name} ~~~~~~")
-    time.sleep(0.3)
+    pause()
 
 
 def instructions():
@@ -106,7 +106,7 @@ def select_question():
     """
     random word selection from the list and display _ for each letter
     """
-    time.sleep(0.3)
+    pause()
     category_chosen = category_select()
     list_num  = category_chosen - 1
     print(f"Category {category_chosen}  was chosen")
@@ -153,7 +153,7 @@ def hangman():
             if guessed in correct_guess:
                 print("Ahhh surely you know you already pressded this letter,"
                       " it's already displayed!")
-                time.sleep(0.1)           
+                pause()
             else:
                 print(f"{guessed.upper()} is the right answer!")
                 correct_guess.add(guessed)   # Add correct letter to the list
@@ -164,7 +164,7 @@ def hangman():
                           f"You completed the word {word.upper()}. YOU WIN!")
                     you_win()
                     break
-                time.sleep(0.1)
+                pause()
         else:
             if len(guessed) > 1:
                 print("***** Please input one letter at a time *****") 
@@ -176,12 +176,12 @@ def hangman():
             print("\n")
             wrong_guess.append(guessed)
             print(f"Your incorrect guesses: {wrong_guess} ")
-            time.sleep(0.1)
+            pause()
     if incorrect == stage_num:
         print(f"Answer is {word.upper()}")
         game_over()
 
-    time.sleep(0.2)
+    pause()
     replay()
 
 
@@ -219,7 +219,11 @@ def replay():
     else:
         print("Thank you for playing the game")
 
-    
+
+def pause():
+    time.sleep(0.2)
+
+
 greeting()  # greeting function
 instructions() # display instruction if user chooses
 hangman()  
