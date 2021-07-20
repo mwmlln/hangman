@@ -178,6 +178,7 @@ def hangman():
             print(f"Your incorrect guesses: {wrong_guess} ")
             time.sleep(0.1)
     if incorrect == stage_num:
+        print(f"Answer is {word.upper()}")
         game_over()
 
     time.sleep(0.2)
