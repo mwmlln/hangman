@@ -115,10 +115,12 @@ def select_question():
     list_num  = category_chosen - 1
     print(f"Category {category_chosen}  was chosen")
     if category_chosen == 4:
-        word = category[random.randint(0, len(category) - 1)][random.randint(0, 5)]
+        category_item = random.choice(category)
+        word = random.choice(category_item)
         return(word)
     else:
-        word = category[list_num][random.randint(0, 5)]
+        category_item = category[list_num]
+        word = random.choice(category_item)
         return(word)
        
 
