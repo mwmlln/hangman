@@ -193,7 +193,7 @@ def display_guess_message():
 
 
 def display_alredy_used():
-    print("Ahhh surely you know you already pressded this letter,"
+    print("Ahhh surely you know you already pressed this letter,"
           " it's already displayed!")
 
 def game_over():
