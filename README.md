@@ -129,7 +129,6 @@ If y is pressed for yes, instruction will be displayed.
 I am aware that the code written in the program may not be the most efficient way. The decision was made to focus on creating workaround solutions to build a fully functioning program with the code that I learned and understand during the rather short space of time given for the course module completion and the project submission deadline.
 When I gain more time and knowledge of Python language, I intend to come back to this program and try improving program efficiently and interactivity. 
 
-
 ##  Technologies 
 
 ###  Languages 
@@ -155,7 +154,7 @@ Testing was carried out by creating each function at a time to minimise the smal
 ### Here are some of the challenges I encountered and steps taken to fix.
 
 1. Validating user input for category choices.
-  try/except method is used to validate the user input for category choice, however it was throwing system error instead of pre-set printing messagge 
+  try/except method is used to validate the user input for category choice, however it was throwing system error instead of pre-set printing message. 
   This was fixed by changing the condition for the while loop.
 
     <details><summary>category_choice error</summary>
@@ -175,7 +174,7 @@ Thanks to Johann in Code Institute's tutor support who has pointed out eventuall
 
 
 4. When len(category) was placed as parameter inside randint method instead of list length as a number to accommodate the flexibility for list items expansion, an error occurred but not every time. This was because the randint(len(category)) produced 1 bigger number than list index available. By placing -1 after the parameter has resolved the issue.
-This solution is not used in the final code ater all as random.choice() is used instead to give more flexibility for changes to list items.
+This solution is not used in the final code after all as random.choice() is used instead to give more flexibility for changes to list items.
 
 
 ###  Validating code 
@@ -188,42 +187,49 @@ The code is validated in PEP8 online validator.
 ##  Deployment 
 ### Here is the procedure taken to deploy the project on Heroku
 
-Prior to deploy, two steps below are taken to prepare the project being deployed.
+Prior to deploy, two steps below are taken to prepare the project deployment.
 1. Ensure all input method texts ends with \n for the program to display properly on Heroku site
 2. All requirements are mentioned in requirements.txt file. This was done by typing following command in GitHub workspace terminal.
-  pip3 freeze > requirements.txt
-This project does not require any extra requirement but the procedure is taken just in case.
-3. Sign up and log in to Heroku[heroku.com]
-4. Click on Create new app button. 
-5. In the next page displayed, enter the project name, pp3-hangman and select Europe as region, then click Create app button.
-6. Open settings page by pressing settings tab. Following has to be done in exact order.
+
+   pip3 freeze > requirements.txt
+
+   This project does not require any extra requirements but the procedure is taken just in case.
+
+Deployment procedure
+1. Sign up and log in to Heroku [heroku.com]
+2. Click on Create new app button. 
+3. In the next page displayed, enter the project name, pp3-hangman and select Europe as region, then click Create app button.
+4. Open settings page by pressing settings tab. Following procedures have to be done in exact order.
    In the Buildpack section of the setting page, press Add Buildpack button and choose python then, click save changes.
    Select Add Buildpack button again and choose nodejs then save changes
-7. Navigate to deploy page by clicking the tab
+5. Navigate to deploy page by clicking the tab
    Choose GitHub then click Connect to GitHub button.
    In the popup window, click authorize and then input password for GitHub
-   Once my Git Hub repositries are connected, type in the name in the search for the project, hangman.
+   Once my Git Hub repositories are connected, type in to search for the project, hangman.
    When the repositories is found, click connect button for the repository.
    GitHub button indicates connected when connection was successful.
-8. As I wanted to have control when to deploy the version, I have chosen manual deployment by pressing Deploy branch button instead of Enable Automatic Deploys. 
-9. once the deployment completed View button will appear. This View button will open the terminal game in the new window.
+6. As I wanted to have control when to deploy  the version, I have chosen manual deployment by pressing Deploy branch button instead of Enable Automatic Deploys. 
+7. once the deployment completed View button will appear. This View button will open the terminal game in the new window.
+Here the deployed [page](https://pp3-hangman.herokuapp.com/)
+8. As manual deployment was chosen, I had to come back to Heroku deployment page whenever I have an updated working version pushed into GitHub page.
+
 
 ##  Credits 
 
 ####  Coding 
 
-* https://enhancer298.net/2020/07/10/hangman1/    This site's tutorial of making Hangman game was used as a general guidance and their approach is used as a stepping stone for initial stage of this project. Also the image of the hangman stage is used from this site.
+* https://enhancer298.net/2020/07/10/hangman1/    This site's tutorial of making Hangman game was used as a general guidance and their approach is used as a stepping stone in the initial stage of this project. Also the image of the hangman stage is used from this site.
 
 * https://www.python-izm.com/   Used for general reference for python code
 
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) This site was used to pinpoint where and why the errors are causing.
 
-* https://note.nkmk.me/python-random-choice-sample-choices/    This site's example of random.choice()helped me to apply this method for selecting a random item from nested list of category
+* https://note.nkmk.me/python-random-choice-sample-choices/    This site's example of random.choice() helped me to apply this method for selecting a random item from nested list of category
 
 
 ###  Media 
 
 * https://diagrams.net/       This site was used to create the flowchart in the planning stage of the project. 
-* http://patorjk.com/software/taag/   ascii art for  title/win/game over  was created in this site
+* http://patorjk.com/software/taag/   ascii art for  title, win and game over message was created in this site
 
 
