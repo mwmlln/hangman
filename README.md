@@ -2,18 +2,19 @@
 # Hangman
 
 
-This site is created as a Milestone project for Code Institute's Software Development course.
+This site is created as a portfolio project for Code Institute's Software Development course.
 
-Here is a link to the live project: [Hangman](https://https://pp3-hangman.herokuapp.com/)
+Here is a link to the live project: [Hangman](https://pp3-hangman.herokuapp.com/)
 
 This is the opening image of the game in Heroku site
 
 <img src="ss_images/hangman_welcome_ss.jpg" width="500">
+Hangman is a classic word game that a lot of people are familiar with.
+This game runs on a terminal based window but has same familiar structure and offers category choices that users can select from.
 
 ## The purpose for this site 
----
-Hangman is a classic terminal based game that a lot of people are familiar with.
-This game has same familiar structure and offers three categories of words that users can choose from.
+This site is created to provide a little fun in the terminal environment which can be boring sometimes.
+Except the mock terminal setting which was provided by Code Institute, the game is made purely using Python language.
 
 
 ## User experience
@@ -21,6 +22,8 @@ This game has same familiar structure and offers three categories of words that 
 ### Target Audience
 
 This game is created for anyone who wants to have fun playing a word game.
+Also this game is a good introduction of terminal window for anyone who are not familiar with termail environment. 
+
 
 ####  User goals 
 
@@ -31,8 +34,9 @@ This game is created for anyone who wants to have fun playing a word game.
 
 ####  Site owner’s goal 
 
-The main objective for creating this site was to gain skill set to build a simple but fun terminal-based game. 
-Hangman game is widely available on the web so I have created extra user interactivity by giving them a choice of category. This also gives a control of the difficulty level. By choosing a specific category, answers can be narrowed down, making it easier to guess the word. By choosing a selection from all categories gives more wide possibility of answer to make it harder to guess the answer.
+The main objective for creating this site was to gain skill set to build a simple but fun terminal-based game using Python. 
+
+Hangman game is widely available on the web so I have created extra user interactivity by giving them a choice of category. This also gives a control of the difficulty level. By choosing a specific category, answers can be narrowed down, making it easier to guess the word. By choosing a selection from all categories gives more wide possibility of answer to make it harder to guess.
 
 ###  User Stories 
 
@@ -43,16 +47,16 @@ This site is created following user’s expectations in mind.
     * Clear feedback for their action
     * Graphical display for fun factor
 
-
-* A returning user would like to have the following additional 
+* A returning user would like to have the following in addition to above
    * Quick response time
    * Clear feedback for their input
    * Choice of difficulty level
-   * Choice to skip the instruction and return to the game
+   * Choice to skip the instruction and start the game
 
 * As a site creator I would like to provide:
   * Interactive game that runs on terminal
   * Clear feedback to user's response
+  * Fun appearace 
   * Provide choice of difficulty level
 
 
@@ -72,24 +76,23 @@ Initial design flowchart
 The game has following features
 
 * Display greetings with user name
-  
-* Display the instruction when user choose to
+* Display the instruction when user opts for
 * Category choice user can select from
-* Playing game
+* Playing the game
 * Choice to play again or exit the game
 
 
 ###  Game process 
 
-1.  Upon loading the page, large logo ascii art displays and asks user to input their name.
+1.  Upon loading the page, large logo ascii art displays and asks user to input their name. 
 As the name is not relevant to the game, user can input any letters or numbers desired.
-When user completes entering their name, welcome message with the name appears.
+When user completes entering their name, welcome message with their name appears.
 
     <details><summary>Logo and welcome message</summary>
     <img src="ss_images/hangman_welcome_ss.jpg" width="500">
     </details>
 
-2. User will be asked if they want a brief instruction displayed or skip to start a game.
+2. User will be then asked if they want a brief instruction displayed or skip to start a game.
 If y is pressed for yes, instruction will be displayed.
     <details><summary>Instruction display</summary>
     <img src="ss_images/instruction_ss.jpg" width="500">
@@ -129,6 +132,9 @@ If y is pressed for yes, instruction will be displayed.
 I am aware that the code written in the program may not be the most efficient way. The decision was made to focus on creating workaround solutions to build a fully functioning program with the code that I learned and understand during the rather short space of time given for the course module completion and the project submission deadline.
 When I gain more time and knowledge of Python language, I intend to come back to this program and try improving program efficiently and interactivity. 
 
+Another features I would like to implement in the future is scraping a web site text contents or importing a csv file for list of words selection.
+Implementing this feature will require some API's and much more knowledge but the end product would be much more interesting. 
+
 ##  Technologies 
 
 ###  Languages 
@@ -136,12 +142,11 @@ When I gain more time and knowledge of Python language, I intend to come back to
  * Python3
 
 ###  Other Technologies, Frameworks & Libraries 
-random and time functions are used in the code.
+random and time methods are used in the code.
 * Random is used to display a random choice from the list
 * Time is used to control the display speed to prevent the text displaying too fast.
-* Code Institute's full template for Python is used in order for the program to display properly in deployed site on Heroku.
+* Code Institute's GitHub full template for Python is used in order for the program to display properly in deployed site on Heroku.
 
- 
  
 ##  Testing 
 Testing was carried out by creating each function at a time to minimise the small errors impacting the whole project.
@@ -180,8 +185,12 @@ This solution is not used in the final code after all as random.choice() is used
 ###  Validating code 
 
 The code is validated in PEP8 online validator.
+In oder to clear all the error messages in PEP8. there was lots of line width adjustment made within run.py file. 
+Thanks to my peer student's suggestion to display the ruler on width at 79 in GitHub editor, this correction was easier in the later stage of the coding.
+
+At the time of project submission, there were no errors detected in PEP8 validator as below.
 <details><summary>PEP8 online validator</summary>
-    <img src="" width="500">
+    <img src="ss_images/pep8_result_ss.jpg" width="500">
     </details>
 
 ##  Deployment 
