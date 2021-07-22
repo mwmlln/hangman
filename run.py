@@ -15,6 +15,7 @@ category = [animals, sea_creatures, fruits]
 stages = ['___________________',
           '|         |        ',
           '|         |        ',
+          '|         |        ',
           '|         0        ',
           '|        /|＼      ',
           '|        / ＼      ',
@@ -64,15 +65,14 @@ def display_instructions():
         instructions_text()
         print("Are you ready to play?")
         game_start = input("Press Any key to start a game >> \n")
-        if game_start != None:   # Any key input starts game
-            pass
-        else:
-            print("You need to press any key to continue")
     else:
         pass
 
 
 def instructions_text():
+    """
+    Display instructions
+    """
     print("Here is instruction on how to play \n"
           "1. Choose a category\n"
           "2. The ame number of Underscore'_' will be displayed \n"
@@ -88,9 +88,10 @@ def instructions_text():
           "8. If number of incorrect attempts reaches the limit \n"
           "   and hangman image completes, game over!")
 
+
 def category_select():
     """
-    Prompt user to select a category for the game and vaidate the input
+    Prompt user to select a category for the game and validate the input
     """
     print("~~~~~~  Please choose one of following category: ~~~~~~\n")
     print("~~ 1. Animals, 2. Sea creatures, 3. Fruits "
@@ -98,7 +99,7 @@ def category_select():
     category_num = 0
     while not 1 <= category_num <= 4:
         try:
-            category_num = int(input("Please enter 1, 2, 3 or 4  >>>  \n")) 
+            category_num = int(input("Please enter 1, 2, 3 or 4  >>>  \n"))
             if 1 <= category_num <= 4:
                 return category_num
             else:
@@ -106,13 +107,14 @@ def category_select():
         except ValueError as e:
             print("Only number 1, 2, 3 or 4 accepted")
 
+
 def select_question():
     """
-    random word selection from the list and display _ for each letter
+    Random word selection from the list and display _ for each letter
     """
     pause()
     category_chosen = category_select()
-    list_num  = category_chosen - 1
+    list_num = category_chosen - 1
     print(f"Category {category_chosen}  was chosen")
     if category_chosen == 4:
         category_item = random.choice(category)
@@ -122,22 +124,22 @@ def select_question():
         category_item = category[list_num]
         word = random.choice(category_item)
         return(word)
-       
+
 
 def start_game():
     """
     Main game function to display questions, check the answer and
     count attempts.
-    Returns to the begining process if game completion condition is not met.
+    Repeats process if game completion condition is not met.
     Either word completion or reaching full stages will end the game.
     """
     incorrect = 0    # Setting the starting point of incorrect attempts
     correct_guess = set([])   # Creating a empty list to store correct answers
     word = select_question()    # Random word chosen by the function
-    check_answer = word.replace(" ","")   # Removing space from answer
+    check_answer = word.replace(" ", "")   # Removing space from answer
     answers = [i for i in check_answer]    # Create list from the word
     wrong_guess = []   # Incorrect letters goes in here
-    # print(f"Answer is set as {answers}")    # ******  For testing purpose ********
+    # print(f"Answer is set as {answers}")    # ***  For testing purpose ***
     while incorrect < stage_num:
         display_guess_message()
         """
@@ -169,14 +171,14 @@ def start_game():
                 pause()
         else:
             if len(guessed) > 1:
-                print("***** Please input one letter at a time *****") 
+                print("***** Please input one letter at a time *****")
             else:
-                print(f"\" {guessed.upper()} \" is not in included in correct answer!")
-                
+                print(f"' {guessed.upper()}' is not in correct answer!")
+
             incorrect += 1    # Increment incorrect attempt
             print("\n".join(stages[:incorrect]))  # Display hangman image
             print("\n")
-            wrong_guess.append(guessed)
+            wrong_guess.append(guessed.upper())
             print(f"Your incorrect guesses: {wrong_guess} ")
             pause()
     if incorrect == stage_num:
@@ -185,6 +187,7 @@ def start_game():
 
     pause()
     replay()
+
 
 def display_guess_message():
     print("\n")
@@ -196,7 +199,11 @@ def display_alredy_used():
     print("Ahhh surely you know you already pressed this letter,"
           " it's already displayed!")
 
+
 def game_over():
+    """
+    GAME OVER ascii art
+    """
     print(" ██████╗  █████╗ ███╗   ███╗███████╗"
           "     ██████╗ ██╗   ██╗███████╗██████╗")
     print("██╔════╝ ██╔══██╗████╗ ████║██╔════╝"
@@ -209,6 +216,7 @@ def game_over():
           "  ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║")
     print(" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝  "
           "   ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
+
 
 def you_win():
     print(" _______ _______ _______     _______ _______ _______ _______ ")
@@ -224,7 +232,8 @@ def replay():
     print("Would you like to play again?")
     print("Enter y or press RUN PROGRAM button above to play again."
           "or press any other key to exit the game.")
-    play_again = input("Please press y to play, any other key to exit the game \n")
+    play_again = input(
+        "Please press y to play, any other key to exit the game \n")
     if play_again.lower() == "y":
         start_game()
     else:
@@ -235,11 +244,10 @@ def pause():
     time.sleep(0.2)
 
 
-display_greeting()  # greeting function
-display_instructions() # display instruction if user chooses
-start_game()  
+def main():
+    display_greeting()  # greeting function
+    display_instructions()  # display instruction if user chooses
+    start_game()
 
 
-# ===== Still to fix ====
-# random number parameter to set as a length of the list 
-
+main()
