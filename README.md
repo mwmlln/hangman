@@ -1,6 +1,32 @@
 
 # Hangman
 
+- [Hangman](#hangman)
+  * [The purpose for this site](#the-purpose-for-this-site)
+  * [User experience](#user-experience)
+    + [Target Audience](#target-audience)
+      - [User goals](#user-goals)
+      - [Site owner’s goal](#site-owner-s-goal)
+    + [User Stories](#user-stories)
+    + [Designing stage](#designing-stage)
+  * [Features](#features)
+    + [Game process](#game-process)
+      - [Features Left to Implement](#features-left-to-implement)
+  * [Technologies](#technologies)
+    + [Languages](#languages)
+    + [Other Technologies, Frameworks & Libraries](#other-technologies--frameworks---libraries)
+  * [Testing](#testing)
+    + [Known error present:](#known-error-present-)
+    + [Here are some of the challenges I encountered and steps taken to fix.](#here-are-some-of-the-challenges-i-encountered-and-steps-taken-to-fix)
+    + [Validating code](#validating-code)
+  * [Deployment](#deployment)
+    + [Here is the procedure taken to deploy the project on Heroku](#here-is-the-procedure-taken-to-deploy-the-project-on-heroku)
+  * [Credits](#credits)
+      - [Coding](#coding)
+    + [Media](#media)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 This site is created as a portfolio project for Code Institute's Software Development course.
 
@@ -245,7 +271,7 @@ Deployment procedure
    GitHub button indicates connected when connection was successful.
 6. As I wanted to have control when to deploy  the version, I have chosen manual deployment by pressing Deploy branch button instead of Enable Automatic Deploys. 
 7. once the deployment completed View button will appear. This View button will open the terminal game in the new window.
-Here the deployed page [Hangman](https://pp3-hangman.herokuapp.com/)
+Here is the deployed page [Hangman](https://pp3-hangman.herokuapp.com/)
 8. As manual deployment was chosen, I had to come back to Heroku deployment page whenever I have an updated working version pushed into GitHub page.
 
 
