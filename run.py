@@ -139,7 +139,6 @@ def start_game():
     check_answer = word.replace(" ", "")   # Removing space from answer
     answers = [i for i in check_answer]    # Create list from the word
     wrong_guess = []   # Incorrect letters goes in here
-    # print(f"Answer is set as {answers}")    # ***  For testing purpose ***
     while incorrect < stage_num:
         display_guess_message()
         """
