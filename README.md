@@ -94,13 +94,15 @@ When user completes entering their name, welcome message with their name appears
 
 2. User will be then asked if they want a brief instruction displayed or skip to start a game.
 If y is pressed for yes, instruction will be displayed.
+User can skip the instruction by pressing any other key other than y.
     <details><summary>Instruction display</summary>
     <img src="ss_images/instruction_ss.jpg" width="500">
     </details>
 
-3. Before the game starts, user has a choice of categories.
+3. Before the game starts, user has a choice of categories. Category 1 to 3 is a random selected word from a chosen category and choosing 4 will be mixing up the category 1-3 and get a random selection from it.
+Any user input other than number 1 to 4 will repeat the input prompt for the selection.
 
-4. Once the category is chosen, underscores will display. These underscores represent a letter in the word selected as the answer.
+4. Once the category is chosen, a word will be selected randomlly and underscores will display. These underscores represent a letter in the word selected as the answer.
 
     <details><summary>Selecting a category and display of underscores</summary>
     <img src="ss_images/category_and-geme_begining.jpg" width="500">
@@ -108,9 +110,16 @@ If y is pressed for yes, instruction will be displayed.
 
 5. User is now asked to guess the word and enter one alphabet key.
 
-6. If the input letter is in the selected word, user get notified and the letter replaces underscore.
 
-7. If the user's input is incorrect (i.e. letter not in the selected word), user will be notified and hangman image display increases one stage at a time.
+6. If the input letter is in the selected word, user get notified and the letter replaces underscore.
+In the case that user input a key that is already displayed instead of unsersore(i.e. Alreasy answered correctly), user get a sarcastic comment as a feedback of thier inpput.
+
+7. If the user's input is incorrect (i.e. letter not in the selected word), user will be notified and hangman image increases one stage at a time.
+    <details><summary>Hangman stage display</summary>
+    <img src="ss_images/hangman_stage_ss.jpg" width="500">
+    </details>  
+
+
 
 8. Game will be completed weather user fills all the letters in the selected word or hangman image completely displays.
 
