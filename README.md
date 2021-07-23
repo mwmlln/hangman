@@ -177,7 +177,7 @@ The code was tested both GitPod terminal and Heroku deployed site to ensure plat
     <img src="ss_images/category_while_repeat_python_tutor.jpg" width="500"> </details>
 
 ### Known error present:
-When grave accent symbol (`) and enter key is pressed in inpput, the program behaves like two input was performed. This causes some of the process to be skipped or repeated depending on the validation set for the input.
+When grave accent symbol (`) and enter key is pressed in inpput, the program sometimes behaves like two input was performed. This causes some of the process to be skipped or repeated depending on the validation set for the input.
 
 <details><summary>Grave accent(backtick) error</summary>
     <img src="ss_images/backtick_error_ss.jpg" width="500"> </details>
@@ -231,7 +231,7 @@ Prior to deploy, two steps below are taken to prepare the project deployment.
    This project does not require any extra requirements but the procedure is taken just in case.
 
 Deployment procedure
-1. Sign up and log in to Heroku [heroku.com]
+1. Sign up and log in to [Heroku](https://heroku.com/)
 2. Click on Create new app button. 
 3. In the next page displayed, enter the project name, pp3-hangman and select Europe as region, then click Create app button.
 4. Open settings page by pressing settings tab. Following procedures have to be done in exact order.
@@ -245,7 +245,7 @@ Deployment procedure
    GitHub button indicates connected when connection was successful.
 6. As I wanted to have control when to deploy  the version, I have chosen manual deployment by pressing Deploy branch button instead of Enable Automatic Deploys. 
 7. once the deployment completed View button will appear. This View button will open the terminal game in the new window.
-Here the deployed [page](https://pp3-hangman.herokuapp.com/)
+Here the deployed page [Hangman](https://pp3-hangman.herokuapp.com/)
 8. As manual deployment was chosen, I had to come back to Heroku deployment page whenever I have an updated working version pushed into GitHub page.
 
 
