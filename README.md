@@ -174,10 +174,13 @@ The code was tested both GitPod terminal and Heroku deployed site to ensure plat
 
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) was used throughout the project's building/testing stage to troubleshoot on errors.
     <details><summary>Python Tutor</summary>
-    <img src="ss_images/category_while_repeat_python_tutor.jpg" width="500">
-          </details>
+    <img src="ss_images/category_while_repeat_python_tutor.jpg" width="500"> </details>
 
-There is no known errors left to fix at the time of submitting this project.
+### Known error present:
+When grave accent symbol (`) and enter key is pressed in inpput, the program behaves like two input was performed. This causes some of the process to be skipped or repeated depending on the validation set for the input.
+
+<details><summary>Grave accent(backtick) error</summary>
+    <img src="ss_images/backtick_error_ss.jpg" width="500"> </details>
 
 ### Here are some of the challenges I encountered and steps taken to fix.
 
