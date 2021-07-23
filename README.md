@@ -6,9 +6,8 @@ This site is created as a portfolio project for Code Institute's Software Develo
 
 Here is a link to the live project: [Hangman](https://pp3-hangman.herokuapp.com/)
 
-This is the opening image of the game in Heroku site
 
-<img src="ss_images/hangman_welcome_ss.jpg" width="500">
+<img src="ss_images/responsive_ss.jpg" width="500">
 Hangman is a classic word game that a lot of people are familiar with.
 This game runs on a terminal based window but has same familiar structure and offers category choices that users can select from.
 
@@ -114,11 +113,13 @@ Any user input other than number 1 to 4 will repeat the input prompt for the sel
 6. If the input letter is in the selected word, user get notified and the letter replaces underscore.
 In the case that user input a key that is already displayed instead of unsersore(i.e. Alreasy answered correctly), user get a sarcastic comment as a feedback of thier inpput.
 
-7. If the user's input is incorrect (i.e. letter not in the selected word), user will be notified and hangman image increases one stage at a time.
-    <details><summary>Hangman stage display</summary>
-    <img src="ss_images/hangman_stage_ss.jpg" width="500">
-    </details>  
+7. If the user's input is incorrect (i.e. letter not in the selected word), user will be notified and hangman image increases one stage at a time. 
 
+   The list of all incorrect input for the current game will display to remind user thier incorrect guesses.
+
+
+   <details><summary>Hangman stage display</summary>
+    <img src="ss_images/hangman_stage_ss.jpg" width="500"> </details>  
 
 
 8. Game will be completed weather user fills all the letters in the selected word or hangman image completely displays.
@@ -128,7 +129,7 @@ In the case that user input a key that is already displayed instead of unsersore
         <img src="ss_images/win_display.jpg" width="500">
         </details>
 
-   * When the game completes with reaching the limit of incorrect attempts, big game over ascii text will display below the hangman image.
+   * When the game completes with reaching the limit of incorrect attempts, big game over ascii art will display below the hangman image.
           <details><summary>GAME OVER display</summary>
           <img src="ss_images/game_over_ss.jpg" width="500">
           </details>
@@ -139,7 +140,7 @@ In the case that user input a key that is already displayed instead of unsersore
 #### Features Left to Implement
 
 I am aware that the code written in the program may not be the most efficient way. The decision was made to focus on creating workaround solutions to build a fully functioning program with the code that I learned and understand during the rather short space of time given for the course module completion and the project submission deadline.
-When I gain more time and knowledge of Python language, I intend to come back to this program and try improving program efficiently and interactivity. 
+When I gain more time and knowledge of Python language, I intend to come back to this program and try improving program efficiency and interactivity. 
 
 Another features I would like to implement in the future is scraping a web site text contents or importing a csv file for list of words selection.
 Implementing this feature will require some API's and much more knowledge but the end product would be much more interesting. 
@@ -158,7 +159,11 @@ random and time methods are used in the code.
 
  
 ##  Testing 
-Testing was carried out by creating each function at a time to minimise the small errors impacting the whole project.
+Testing was carried out by each function at a time to minimise the small errors impacting the whole project.
+
+After coding has completed, every input elements were tested by entering invalid data to ensure that invalid user input returns appropriate feedbak to the user and does not result in game interuptions.
+
+The code was tested both GitPod terminal and Heroku deployed site to ensure platform issues are not detected.
 
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) was used throughout the project's building/testing stage to troubleshoot on errors.
     <details><summary>Python Tutor</summary>
