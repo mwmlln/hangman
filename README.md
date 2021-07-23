@@ -8,12 +8,13 @@ Here is a link to the live project: [Hangman](https://pp3-hangman.herokuapp.com/
 
 
 <img src="ss_images/responsive_ss.jpg" width="500">
+
 Hangman is a classic word game that a lot of people are familiar with.
 This game runs on a terminal based window but has same familiar structure and offers category choices that users can select from.
 
 ## The purpose for this site 
 This site is created to provide a little fun in the terminal environment which can be boring sometimes.
-Except the mock terminal setting which was provided by Code Institute, the game is made purely using Python language.
+Except the mock terminal setting which was provided by Code Institute's template, the game is made purely using Python language.
 
 
 ## User experience
@@ -62,12 +63,13 @@ This site is created following user’s expectations in mind.
 ###  Designing stage 
 
 This is the flowchart made during the planning stage of the project. This flowchart has been used to visualise the functions and behaviour control during the building stage of the project.
-.
+
 Initial design flowchart 
 <details><summary>Hangman Flowchart</summary>
 <img src="ss_images/hangman_flowchart_ss.jpg" width="500">
 </details>
 
+This flowchart was refered during the building stage to make sure the data flows are executed appropriately to complete the game process.
 
 ##  Features 
 ---
@@ -84,7 +86,7 @@ The game has following features
 ###  Game process 
 
 1.  Upon loading the page, large logo ascii art displays and asks user to input their name. 
-As the name is not relevant to the game, user can input any letters or numbers desired.
+As the name is not relevant to the game, user can input any letters, numbers or charactors desired.
 When user completes entering their name, welcome message with their name appears.
 
     <details><summary>Logo and welcome message</summary>
@@ -93,15 +95,18 @@ When user completes entering their name, welcome message with their name appears
 
 2. User will be then asked if they want a brief instruction displayed or skip to start a game.
 If y is pressed for yes, instruction will be displayed.
-User can skip the instruction by pressing any other key other than y.
+User can skip the instruction by pressing any other key except y.
+After reading the instruction, user can press any key to start a game.
+
     <details><summary>Instruction display</summary>
     <img src="ss_images/instruction_ss.jpg" width="500">
     </details>
 
 3. Before the game starts, user has a choice of categories. Category 1 to 3 is a random selected word from a chosen category and choosing 4 will be mixing up the category 1-3 and get a random selection from it.
 Any user input other than number 1 to 4 will repeat the input prompt for the selection.
+Here, user input is validated each time and appropriate feedback is given for invalid data entry.
 
-4. Once the category is chosen, a word will be selected randomlly and underscores will display. These underscores represent a letter in the word selected as the answer.
+4. Once the category is chosen, a word will be selected randomly and underscores will display. These underscores represent a letter in the word selected as the answer.
 
     <details><summary>Selecting a category and display of underscores</summary>
     <img src="ss_images/category_and-geme_begining.jpg" width="500">
@@ -111,7 +116,7 @@ Any user input other than number 1 to 4 will repeat the input prompt for the sel
 
 
 6. If the input letter is in the selected word, user get notified and the letter replaces underscore.
-In the case that user input a key that is already displayed instead of unsersore(i.e. Alreasy answered correctly), user get a sarcastic comment as a feedback of thier inpput.
+In the case that user input a key that is already displayed among unsersores(i.e. alreasy answered correctly), user get a sarcastic comment as a feedback of thier inpput.
 
 7. If the user's input is incorrect (i.e. letter not in the selected word), user will be notified and hangman image increases one stage at a time. 
 
@@ -136,6 +141,7 @@ In the case that user input a key that is already displayed instead of unsersore
 
 
 9. User will now be asked if they want to start another game or exit.
+When exit is chosen, thank you message displays.
 
 #### Features Left to Implement
 
@@ -160,15 +166,18 @@ random and time methods are used in the code.
  
 ##  Testing 
 Testing was carried out by each function at a time to minimise the small errors impacting the whole project.
+Each functions are tested to ensure expected behaviour was performed and correct results are returned.
 
 After coding has completed, every input elements were tested by entering invalid data to ensure that invalid user input returns appropriate feedbak to the user and does not result in game interuptions.
 
-The code was tested both GitPod terminal and Heroku deployed site to ensure platform issues are not detected.
+The code was tested both GitPod terminal and Heroku deployed site to ensure platform issues are not present in both displays.
 
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) was used throughout the project's building/testing stage to troubleshoot on errors.
     <details><summary>Python Tutor</summary>
     <img src="ss_images/category_while_repeat_python_tutor.jpg" width="500">
           </details>
+
+There is no known errors left to fix at the time of submitting this project.
 
 ### Here are some of the challenges I encountered and steps taken to fix.
 
@@ -200,7 +209,7 @@ This solution is not used in the final code after all as random.choice() is used
 
 The code is validated in PEP8 online validator.
 In oder to clear all the error messages in PEP8. there was lots of line width adjustment made within run.py file. 
-Thanks to my peer student's suggestion to display the ruler on width at 79 in GitHub editor, this correction was easier in the later stage of the coding.
+Thanks to my peer student's suggestion of setting the display of ruler at width 79 in GitHub editor, this adjustment was easier in the later stage of the coding.
 
 At the time of project submission, there were no errors detected in PEP8 validator as below.
 <details><summary>PEP8 online validator</summary>
