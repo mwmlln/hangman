@@ -84,9 +84,10 @@ def instructions_text():
           "   instead of the underscore'_'.\n"
           "5. If you guess all the letters and complete the word,\n"
           "   you win the game\n"
-          "7. If the incorrect answer is entered, hangman image will progress.\n"
-          "8. If the number of incorrect attempts reaches the limit \n"
-          "   and hangman image completes, game over!")
+          "7. If the incorrect answer is entered,"
+          "hangman image will progress.\n"
+          "8. If the number of incorrect attempts reaches the limit"
+          "and hangman image completes, game over!")
 
 
 def category_select():
