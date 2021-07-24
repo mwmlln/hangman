@@ -108,7 +108,6 @@ The game has following features
 * Playing the game
 * Choice to play again or exit the game
 
-
 ###  Game process 
 
 1.  Upon loading the page, large logo ascii art displays and asks user to input their name. 
@@ -169,6 +168,14 @@ In the case that user input a key that is already displayed among unsersores(i.e
 9. User will now be asked if they want to start another game or exit.
 When exit is chosen, thank you message displays.
 
+### Data model
+
+The flowchart below summarised the data flow in this program.
+<details><summary>Data model</summary>
+<img src="ss_images/data_model_ss.jpg" width="500">
+</details>
+
+
 #### Features Left to Implement
 
 I am aware that the code written in the program may not be the most efficient way. The decision was made to focus on creating workaround solutions to build a fully functioning program with the code that I learned and understand during the rather short space of time given for the course module completion and the project submission deadline.
@@ -203,7 +210,8 @@ The code was tested both GitPod terminal and Heroku deployed site to ensure plat
     <img src="ss_images/category_while_repeat_python_tutor.jpg" width="500"> </details>
 
 ### Known error present:
-When grave accent symbol (`) and enter key is pressed in inpput, the program sometimes behaves like two input was performed. This causes some of the process to be skipped or repeated depending on the validation set for the input.
+When grave accent symbol (`) and enter key is pressed in any inpput prompt, the program sometimes behaves like two inputs were performed. This causes some of the process to be skipped or repeated depending on the validation set for the input.
+This behaviour was observed in other terminal based python programs on Heroku including the example provided by Code Institute. Hence I have left this error untouched, assuming this behaviour is caused by the way Python handling this particular symbol, not caused by my programming error.
 
 <details><summary>Grave accent(backtick) error</summary>
     <img src="ss_images/backtick_error_ss.jpg" width="500"> </details>
