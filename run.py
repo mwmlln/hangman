@@ -75,7 +75,7 @@ def instructions_text():
     """
     print("Here is instruction on how to play \n"
           "1. Choose a category\n"
-          "2. The same number of Underscores'_' will be displayed \n"
+          "2. The same number of Underscores '_' will be displayed \n"
           "   as letters in the word.\n"
           "3. Guess the word\n"
           "   Only one alphabet key should be entered at each time.\n"
